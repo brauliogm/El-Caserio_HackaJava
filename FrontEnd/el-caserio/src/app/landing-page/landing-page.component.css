@@ -4,7 +4,16 @@
 }
 
 .carousel-item img {
-    max-height: 500px; /* Define la altura máxima que desees */
-    max-width: 100%; /* Permite que el ancho se ajuste automáticamente */
+    max-height: 45vw; /* Define la altura máxima que desees */
+    max-width: fit-content; /* Permite que el ancho se ajuste automáticamente */
     height: auto; /* Para mantener la relación de aspecto original */
+    margin: auto;
+}
+
+.bg-hero{
+    background-image: url(../../assets/bg-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45vw;
+    position: relative;
 }
