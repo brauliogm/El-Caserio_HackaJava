@@ -1,0 +1,10 @@
+.altura{
+    max-height: 500px;
+    height: 400px;
+}
+
+.carousel-item img {
+    max-height: 500px; /* Define la altura máxima que desees */
+    max-width: 100%; /* Permite que el ancho se ajuste automáticamente */
+    height: auto; /* Para mantener la relación de aspecto original */
+}
