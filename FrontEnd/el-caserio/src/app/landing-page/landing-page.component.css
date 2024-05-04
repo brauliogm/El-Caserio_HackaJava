@@ -3,6 +3,10 @@
     height: 400px;
 }
 
+.marginBot{
+    margin-bottom: 70px;
+}
+
 .carousel-item img {
     max-height: 45vw; /* Define la altura máxima que desees */
     max-width: fit-content; /* Permite que el ancho se ajuste automáticamente */
@@ -17,3 +21,38 @@
     height: 45vw;
     position: relative;
 }
+
+.separator h1::after {
+    background-image: url(../../assets/separator.png);
+    width: 172px;
+    height: 38px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.separator h1 {
+    position: relative;
+    color: #fff;
+    padding: 0 0 40px 0;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.destacados:hover img{
+    transform: scale(1.05);
+    transition: all 400ms ease-in-out;
+}
+
+.tamanio-boton{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
