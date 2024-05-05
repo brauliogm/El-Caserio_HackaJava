@@ -58,6 +58,17 @@ public class Mesa {
     public void setEstado(EstadoMesa estado) {
         this.estado = estado;
     }
+
+    @Override
+    public String toString() {
+        return "Mesa{" +
+                "id=" + id +
+                ", numero=" + numero +
+                ", capacidad=" + capacidad +
+                ", estado=" + estado +
+                '}';
+    }
+
     // Enumeración para representar el estado de la mesa
     public enum EstadoMesa {
         DISPONIBLE,

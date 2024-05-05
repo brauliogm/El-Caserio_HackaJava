@@ -54,4 +54,14 @@ public class Cliente {
         this.direccion = direccion;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", direccion=" + direccion +
+                '}';
+    }
 }

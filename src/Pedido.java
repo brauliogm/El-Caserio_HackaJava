@@ -92,6 +92,17 @@ public class Pedido {
     public void setFechaPedido(Date fechaPedido) {
         this.fechaPedido = fechaPedido;
     }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "id=" + id +
+                ", productos=" + productos +
+                ", cliente=" + cliente +
+                ", estado=" + estado +
+                ", fechaPedido=" + fechaPedido +
+                '}';
+    }
 }
 
 // Enumeración para representar el estado del pedido

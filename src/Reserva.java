@@ -24,6 +24,57 @@ public class Reserva {
         // Otros pasos necesarios para realizar la reserva, como almacenarla en la base de datos, etc.
     }
 
-    // Otros métodos getters y setters
+    // Métodos getters y setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
+    }
+
+    public Date getFechaReserva() {
+        return fechaReserva;
+    }
+
+    public void setFechaReserva(Date fechaReserva) {
+        this.fechaReserva = fechaReserva;
+    }
+
+    public int getCantidadPersonas() {
+        return cantidadPersonas;
+    }
+
+    public void setCantidadPersonas(int cantidadPersonas) {
+        this.cantidadPersonas = cantidadPersonas;
+    }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "id=" + id +
+                ", cliente=" + cliente +
+                ", mesa=" + mesa +
+                ", fechaReserva=" + fechaReserva +
+                ", cantidadPersonas=" + cantidadPersonas +
+                '}';
+    }
 }
 
