@@ -50,9 +50,23 @@
 }
 
 .tamanio-boton{
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: fit-content;
+    width: fit-content;
   }
+
+  .bg-oferta{
+    background-image: url(../../assets/bg-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    position: relative;
+}
+
+.bg-oferta img{
+    max-width: 100%;
+    height: auto;
+}
+
+.bg-oferta h1{
+    font-size: 400%;
+}
