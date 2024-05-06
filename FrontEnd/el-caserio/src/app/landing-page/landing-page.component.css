@@ -70,3 +70,16 @@
 .bg-oferta h1{
     font-size: 400%;
 }
+
+.comentarios{
+    width: 90%;
+    margin: auto;
+}
+
+.video img{
+    max-width: fit-content;
+    max-height: 450px; /* Permite que el ancho se ajuste automáticamente */
+    height: auto; /* Para mantener la relación de aspecto original */
+    margin: auto;
+    background-color: aqua;
+}
