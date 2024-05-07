@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Carrito extends Pedido {
 
     public Carrito(Long id, Cliente cliente) {

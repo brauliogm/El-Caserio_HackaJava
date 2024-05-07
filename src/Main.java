@@ -1,23 +1,36 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Producto> lista = new ArrayList<>();
+        // Crear algunos objetos necesarios
+        DireccionCliente direccionCliente = new DireccionCliente(1L, "Calle 123", 12345, "Ciudad", "Provincia", "País");
+        Cliente cliente = new Cliente(1L, "Juan", "123456789", "juan@example.com", direccionCliente);
 
-        Alergeno ketchup = new Alergeno(1, "Ketchup");
-        Producto burger = new Producto(1L, "Burger", "Burger", "Especial", "La mejor de la casa", ketchup, 5.99);
-        Carrito carrito1 = new Carrito(1L, lista);
+        Alergeno alergeno1 = new Alergeno(1, "Gluten");
+        Alergeno alergeno2 = new Alergeno(2, "Lactosa");
 
+        Producto producto1 = new Producto(1L, "Pizza", "Comida", "Pizza", "Pizza de pepperoni", alergeno1, 10.0);
+        Producto producto2 = new Producto(2L, "Ensalada", "Comida", "Ensalada", "Ensalada César", alergeno2, 8.0);
 
-        carrito1.agregarProducto(burger);
-        carrito1.agregarProducto(burger);
-        carrito1.agregarProducto(burger);
-        carrito1.eliminarProducto(burger);
-        carrito1.eliminarProducto(burger);
-        System.out.println(carrito1.calcularPrecio());
-        carrito1.verProductos();
+        Mesa mesa1 = new Mesa(1L, 1, 4);
+        Mesa mesa2 = new Mesa(2L, 2, 6);
 
+        // Crear una reserva
+        Reserva reserva = new Reserva(1L, cliente, mesa1, 4);
+        reserva.realizarReserva();
+
+        // Crear un pedido
+        Pedido pedido = new Pedido(1L, cliente);
+        pedido.agregarProducto(producto1);
+        pedido.agregarProducto(producto2);
+        pedido.procesarPedido();
+
+        // Mostrar información
+        System.out.println("Reserva:");
+        System.out.println(reserva);
+        System.out.println();
+
+        System.out.println("Pedido:");
+        System.out.println(pedido);
+        System.out.println("Total: $" + pedido.calcularTotal());
     }
 }
