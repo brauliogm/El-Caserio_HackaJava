@@ -1,61 +1,36 @@
 import java.util.ArrayList;
 
-public class Carrito {
+public class Carrito extends Pedido {
 
-    private Long id;
-    private ArrayList<Producto> productos;
-    private Producto producto;
-    private double sumaTotal = 0.00;
-
-    public Carrito(Long id, ArrayList<Producto> productos) {
-        this.id = id;
-        this.productos = productos;
+    public Carrito(Long id, Cliente cliente) {
+        super(id, cliente);
     }
 
-    // Método que permite agregar un producto al carrito y sumar su precio al total
-    public void agregarProducto(Producto nombreProducto) {
-        productos.add(nombreProducto);
-        sumaTotal = sumaTotal + nombreProducto.getPrecio();
+    // Método para vaciar el carrito
+    public void vaciarCarrito() {
+        this.getProductos().clear();
     }
 
-    // Método que permite eliminar un producto del carrito y restar su precio del total
-    public void eliminarProducto(Producto nombreProducto) {
-        productos.remove(nombreProducto);
-        sumaTotal = sumaTotal - nombreProducto.getPrecio();
+    // Método para mostrar los productos en el carrito
+    public void mostrarProductos() {
+        for (Producto producto : getProductos()) {
+            System.out.println(producto);
+        }
     }
 
-    // Método que muestra el total de los productos en la lista del carrito
-    public void verProductos() {
-        System.out.println(productos);
-    }
-
-    // Método que calcula el precio total de los productos de la lista del carrito
-    public double calcularPrecio() {
-        return sumaTotal;
-    }
-
-
-    // getters, setters y toString
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public ArrayList<Producto> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(ArrayList<Producto> productos) {
-        this.productos = productos;
+    // Método para calcular el precio total del carrito
+    public double calcularPrecioTotal() {
+        return calcularTotal();
     }
 
     @Override
     public String toString() {
         return "Carrito{" +
-                "productos=" + productos +
+                "id=" + getId() +
+                ", productos=" + getProductos() +
+                ", cliente=" + getCliente() +
+                ", estado=" + getEstado() +
+                ", fechaPedido=" + getFechaPedido() +
                 '}';
     }
 }

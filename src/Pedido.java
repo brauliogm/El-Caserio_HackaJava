@@ -8,6 +8,7 @@ public class Pedido {
     private Cliente cliente;
     private EstadoPedido estado;
     private Date fechaPedido;
+    private double sumaTotal = 0.00;
 
     public Pedido(Long id, Cliente cliente) {
         this.id = id;
@@ -20,11 +21,13 @@ public class Pedido {
     // Método para agregar un producto al pedido
     public void agregarProducto(Producto producto) {
         productos.add(producto);
+        sumaTotal = sumaTotal + producto.getPrecio();
     }
 
     // Método para eliminar un producto del pedido
     public void eliminarProducto(Producto producto) {
         productos.remove(producto);
+        sumaTotal = sumaTotal - producto.getPrecio();
     }
 
     // Método para calcular el total del pedido
