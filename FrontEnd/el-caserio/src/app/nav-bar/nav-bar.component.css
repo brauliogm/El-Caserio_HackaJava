@@ -6,4 +6,13 @@
 
 .carrito{
     width: 400px;
+    position: absolute;
+    margin-top: 19px;
+    margin-left: -350px;
+    display: block;
+}
+
+.tamanio-boton{
+    height: fit-content;
+    width: fit-content;
 }
