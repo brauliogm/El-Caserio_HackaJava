@@ -9,8 +9,15 @@
     position: absolute;
     margin-top: 19px;
     margin-left: -350px;
-    display: block;
 }
+
+#menu {
+    display: none;
+  }
+  
+  #menu.show {
+    display: block;
+  }
 
 .tamanio-boton{
     height: fit-content;
