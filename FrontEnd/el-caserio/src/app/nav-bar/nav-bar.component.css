@@ -16,3 +16,12 @@
     height: fit-content;
     width: fit-content;
 }
+
+.parrafo{
+    white-space-collapse: break-spaces;
+    text-wrap: wrap;
+}
+
+.total{
+    margin-right: -12px;
+}
