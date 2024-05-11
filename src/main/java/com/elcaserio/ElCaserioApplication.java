@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ElcaserioApplication {
+public class ElCaserioApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ElcaserioApplication.class, args);
+		SpringApplication.run(ElCaserioApplication.class, args);
 	}
 
 }
