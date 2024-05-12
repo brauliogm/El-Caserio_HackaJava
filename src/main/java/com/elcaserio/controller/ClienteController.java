@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
 public class ClienteController {
 
     @Autowired
@@ -24,6 +25,7 @@ public class ClienteController {
 
     @PostMapping("/crearCliente")
     public String crearCliente(@RequestBody Cliente cliente) {
+        iClienteService.crearCliente(cliente);
         return "Cliente creado correctamente.";
     }
 
@@ -35,10 +37,10 @@ public class ClienteController {
 
     @PutMapping("/modificarCliente/{id}")
     public String modificarCliente(@PathVariable Long id,
-                                   @RequestParam (required = false) String nombreNuevo,
-                                   @RequestParam (required = false) String telefonoNuevo,
-                                   @RequestParam (required = false) String emailNuevo,
-                                   @RequestParam (required = false) String direccionNueva) {
+                                   @RequestParam (required = false, name = "nombre") String nombreNuevo,
+                                   @RequestParam (required = false, name = "telefono") String telefonoNuevo,
+                                   @RequestParam (required = false, name = "email") String emailNuevo,
+                                   @RequestParam (required = false, name = "direccion") String direccionNueva) {
         iClienteService.modificarCliente(id, nombreNuevo, telefonoNuevo, emailNuevo, direccionNueva);
 
         return "Cliente modificado correctamente.";
