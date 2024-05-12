@@ -1,18 +1,28 @@
 package com.elcaserio.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
+@Entity
 public class Cliente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nombre;
     private String telefono;
     private String email;
-    private DireccionCliente direccion;
+    private String direccion;
 
-    public Cliente(Long id, String nombre, String telefono, String email, DireccionCliente direccion) {
+    public Cliente() {
+    }
+
+    public Cliente(Long id, String nombre, String telefono, String email, String direccion) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;

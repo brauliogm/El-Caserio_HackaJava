@@ -10,6 +10,8 @@ public interface IAlergenoService {
 
     public void eliminarAlergeno(int id);
 
+    public void eliminarTodo();
+
     public List<Alergeno> verAlergenos();
 
     public Alergeno buscarAlergeno(int id);

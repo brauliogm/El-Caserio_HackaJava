@@ -30,6 +30,12 @@ public class AlergenoController {
         return "Alergeno eliminado correctamente";
     }
 
+    @DeleteMapping("/eliminarAlergenos")
+    public String eliminarTodo() {
+        iAlergenoService.eliminarTodo();
+        return "Se han eliminado todos los Alérgenos de la base de datos correctamente.";
+    }
+
     @PutMapping("/modificarAlergeno/{idAntiguo}")
     public String modificarAlergeno(@PathVariable int idAntiguo,
                                     @RequestParam(required = false, name = "id") int idNueva,

@@ -25,6 +25,12 @@ public class AlergenoService implements IAlergenoService {
         alergenoRepo.deleteById(id);
     }
 
+    // MÉTODO PARA ELIMINAR TODO
+    @Override
+    public void eliminarTodo() {
+        alergenoRepo.deleteAll();
+    }
+
     //MÉTODO PARA VER LA LISTA COMPLETA
     @Override
     public List<Alergeno> verAlergenos() {

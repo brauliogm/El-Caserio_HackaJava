@@ -1,4 +1,9 @@
 package com.elcaserio.repository;
 
-public interface IClienteRepository {
+import com.elcaserio.model.Cliente;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IClienteRepository extends JpaRepository <Cliente, Long> {
 }
