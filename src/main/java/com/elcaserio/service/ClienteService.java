@@ -40,7 +40,7 @@ public class ClienteService implements IClienteService {
 
     //MÉTODO PARA ELIMINAR TODOS LOS CLIENTES
     @Override
-    public void eliminarTodo() {
+    public void eliminarClientes() {
         iClienteRepo.deleteAll();
     }
 

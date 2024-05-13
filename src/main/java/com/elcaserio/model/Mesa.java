@@ -7,13 +7,13 @@ import lombok.Setter;
 public class Mesa {
 
     private Long id;
-    private int numero;
+    private int numeroMesa;
     private int capacidad;
     private EstadoMesa estado;
 
-    public Mesa(Long id, int numero, int capacidad) {
+    public Mesa(Long id, int numeroMesa, int capacidad) {
         this.id = id;
-        this.numero = numero;
+        this.numeroMesa = numeroMesa;
         this.capacidad = capacidad;
         this.estado = EstadoMesa.DISPONIBLE;
     }
@@ -37,7 +37,7 @@ public class Mesa {
     public String toString() {
         return "Mesa{" +
                 "id=" + id +
-                ", numero=" + numero +
+                ", numeroMesa=" + numeroMesa +
                 ", capacidad=" + capacidad +
                 ", estado=" + estado +
                 '}';

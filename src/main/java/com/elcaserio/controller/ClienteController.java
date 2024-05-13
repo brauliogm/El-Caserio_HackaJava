@@ -35,6 +35,12 @@ public class ClienteController {
         return "Cliente eliminado correctamente";
     }
 
+    @DeleteMapping("/eliminarClientes")
+    public String eliminarClientes() {
+        iClienteService.eliminarClientes();
+        return "Se han eliminado todos los clientes de la base de datos correctamente.";
+    }
+
     @PutMapping("/modificarCliente/{id}")
     public String modificarCliente(@PathVariable Long id,
                                    @RequestParam (required = false, name = "nombre") String nombreNuevo,
