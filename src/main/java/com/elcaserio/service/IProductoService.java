@@ -17,6 +17,8 @@ public interface IProductoService {
 
     public void eliminarProductos();
 
-    public void modificarProducto(Long id, String nombreNuevo, String categoriaNueva, String subcategoriaNueva, String descripcionNueva, List<Alergeno> alergenosNuevos, double precioNuevo);
+    // public void modificarProducto(Long id, String nombreNuevo, String categoriaNueva, String subcategoriaNueva, String descripcionNueva, List<Alergeno> alergenosNuevos, double precioNuevo);
+
+    public void modificarProducto(Producto producto);
 
 }

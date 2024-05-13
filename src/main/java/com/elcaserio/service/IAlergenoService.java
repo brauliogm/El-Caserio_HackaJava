@@ -16,6 +16,6 @@ public interface IAlergenoService {
 
     public Alergeno buscarAlergeno(int id);
 
-    public void modificarAlergeno(int idAntiguo, int idNuevo, String nombreNuevo);
+    public void modificarAlergeno(Alergeno alergeno);
 
 }

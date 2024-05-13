@@ -1,6 +1,5 @@
 package com.elcaserio.service;
 
-import com.elcaserio.model.Alergeno;
 import com.elcaserio.model.Producto;
 import com.elcaserio.repository.IProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,14 +47,7 @@ public class ProductoService implements IProductoService {
 
     //MÉTODO PARA MODIFICAR UN PRODUCTO
     @Override
-    public void modificarProducto(Long id, String nombreNuevo, String categoriaNueva, String subcategoriaNueva, String descripcionNueva, List<Alergeno> alergenosNuevos, double precioNuevo) {
-        Producto producto = verProducto(id);
-        producto.setNombre(nombreNuevo);
-        producto.setCategoria(categoriaNueva);
-        producto.setSubcategoria(subcategoriaNueva);
-        producto.setAlergenos(alergenosNuevos);
-        producto.setDescripcion(descripcionNueva);
-        producto.setPrecio(precioNuevo);
+    public void modificarProducto(Producto producto) {
         iProductoRepo.save(producto);
     }
 }

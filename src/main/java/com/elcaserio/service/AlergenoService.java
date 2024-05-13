@@ -47,10 +47,7 @@ public class AlergenoService implements IAlergenoService {
 
     // MÉTODO PARA MODIFICARLO
     @Override
-    public void modificarAlergeno(int idAntiguo, int idNuevo, String nombreNuevo) {
-        Alergeno alergeno = buscarAlergeno(idAntiguo);
-        alergeno.setId(idNuevo);
-        alergeno.setNombre(nombreNuevo);
+    public void modificarAlergeno(Alergeno alergeno) {
         alergenoRepo.save(alergeno);
     }
 }

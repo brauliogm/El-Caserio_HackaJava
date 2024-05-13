@@ -36,12 +36,10 @@ public class AlergenoController {
         return "Se han eliminado todos los Alérgenos de la base de datos correctamente.";
     }
 
-    @PutMapping("/modificarAlergeno/{idAntiguo}")
-    public String modificarAlergeno(@PathVariable int idAntiguo,
-                                    @RequestParam(required = false, name = "id") int idNueva,
-                                    @RequestParam(required = false, name = "nombre") String nombreNuevo) {
+    @PutMapping("/modificarAlergeno")
+    public String modificarAlergeno(@RequestBody Alergeno alergeno) {
+        iAlergenoService.modificarAlergeno(alergeno);
 
-        iAlergenoService.modificarAlergeno(idAntiguo, idNueva, nombreNuevo);
         return "Alergeno modificado correctamente.";
     }
 

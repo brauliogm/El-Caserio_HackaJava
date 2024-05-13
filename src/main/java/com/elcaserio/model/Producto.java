@@ -17,20 +17,20 @@ public class Producto {
     private String categoria;
     private String subcategoria;
     private String descripcion;
-    @OneToMany
-    private List<Alergeno> alergenos;
+    @ManyToMany
+    private List<Alergeno> listaAlergenos;
     private double precio;
 
     public Producto() {
     }
 
-    public Producto(Long id, String nombre, String categoria, String subcategoria, String descripcion, List<Alergeno> alergenos, double precio) {
+    public Producto(Long id, String nombre, String categoria, String subcategoria, String descripcion, List<Alergeno> listaAlergenos, double precio) {
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
         this.subcategoria = subcategoria;
         this.descripcion = descripcion;
-        this.alergenos = alergenos;
+        this.listaAlergenos = listaAlergenos;
         this.precio = precio;
     }
 

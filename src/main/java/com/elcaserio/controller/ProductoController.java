@@ -1,6 +1,5 @@
 package com.elcaserio.controller;
 
-import com.elcaserio.model.Alergeno;
 import com.elcaserio.model.Producto;
 import com.elcaserio.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,15 +41,9 @@ public class ProductoController {
         return "Todos los productos han sido eliminados correctamente.";
     }
 
-    @PutMapping("/modificarProducto/{id}")
-    public String modificarProducto(@PathVariable Long id,
-                                    @RequestParam(required = false, name = "nombre") String nombreNuevo,
-                                    @RequestParam(required = false, name = "categoria") String categoriaNueva,
-                                    @RequestParam(required = false, name = "subcategoria") String subcategoriaNueva,
-                                    @RequestParam(required = false, name = "descripcion") String descripcionNueva,
-                                    @RequestParam(required = false, name = "alergenos") List<Alergeno> alergenosNuevos,
-                                    @RequestParam(required = false, name = "precio") double precioNuevo) {
-        iProductoService.modificarProducto(id, nombreNuevo, categoriaNueva, subcategoriaNueva, descripcionNueva, alergenosNuevos, precioNuevo);
+    @PutMapping("/modificarProducto")
+    public String modificarProducto(@RequestBody Producto producto) {
+        iProductoService.modificarProducto(producto);
 
         return "Producto modificado correctamente.";
     }

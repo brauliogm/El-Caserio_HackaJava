@@ -16,6 +16,6 @@ public interface IClienteService {
 
     public void eliminarClientes();
 
-    public void modificarCliente(Long id, String nombreNuevo, String telefonoNuevo, String emailNuevo, String direccionNueva);
+    public void modificarCliente(Cliente cliente);
 
 }

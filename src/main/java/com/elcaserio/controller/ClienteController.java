@@ -41,13 +41,9 @@ public class ClienteController {
         return "Se han eliminado todos los clientes de la base de datos correctamente.";
     }
 
-    @PutMapping("/modificarCliente/{id}")
-    public String modificarCliente(@PathVariable Long id,
-                                   @RequestParam (required = false, name = "nombre") String nombreNuevo,
-                                   @RequestParam (required = false, name = "telefono") String telefonoNuevo,
-                                   @RequestParam (required = false, name = "email") String emailNuevo,
-                                   @RequestParam (required = false, name = "direccion") String direccionNueva) {
-        iClienteService.modificarCliente(id, nombreNuevo, telefonoNuevo, emailNuevo, direccionNueva);
+    @PutMapping("/modificarCliente")
+    public String modificarCliente(@RequestBody Cliente cliente) {
+        iClienteService.modificarCliente(cliente);
 
         return "Cliente modificado correctamente.";
     }

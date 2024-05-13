@@ -46,12 +46,7 @@ public class ClienteService implements IClienteService {
 
     //MÉTODO PARA MODIFICAR UN CLIENTE
     @Override
-    public void modificarCliente(Long id, String nombreNuevo, String telefonoNuevo, String emailNuevo, String direccionNueva) {
-        Cliente cliente = this.buscarCliente(id);
-        cliente.setNombre(nombreNuevo);
-        cliente.setTelefono(telefonoNuevo);
-        cliente.setEmail(emailNuevo);
-        cliente.setDireccion(direccionNueva);
+    public void modificarCliente(Cliente cliente) {
         iClienteRepo.save(cliente);
     }
 }
