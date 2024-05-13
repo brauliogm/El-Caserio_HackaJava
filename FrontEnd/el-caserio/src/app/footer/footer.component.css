@@ -1,0 +1,42 @@
+/*footer*/
+
+.footer{
+    background-color: black;
+    padding-top: 20px;
+}
+
+.logo svg {
+    stroke-width: 8px;
+    width: 3rem;
+    height: 3rem;
+}
+
+/*? socials */
+
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.social-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-links img {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.social-links ul {
+    display: flex;
+    gap: 0.75rem;
+    list-style-type: none;
+}
