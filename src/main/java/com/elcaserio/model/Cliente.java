@@ -1,11 +1,10 @@
 package com.elcaserio.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter @Setter
 @Entity
@@ -17,17 +16,18 @@ public class Cliente {
     private String nombre;
     private String telefono;
     private String email;
-    private String direccion;
+    @ManyToMany
+    private List<DireccionCliente> direccionCliente;
 
     public Cliente() {
     }
 
-    public Cliente(Long id, String nombre, String telefono, String email, String direccion) {
+    public Cliente(Long id, String nombre, String telefono, String email, List<DireccionCliente> direccionCliente) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
-        this.direccion = direccion;
+        this.direccionCliente = direccionCliente;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class Cliente {
                 ", nombre='" + nombre + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", email='" + email + '\'' +
-                ", direccion=" + direccion +
+                ", direccionCliente=" + direccionCliente +
                 '}';
     }
 

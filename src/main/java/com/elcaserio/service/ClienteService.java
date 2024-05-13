@@ -22,8 +22,7 @@ public class ClienteService implements IClienteService {
     //MÉTODO PARA VER TODOS LOS CLIENTES
     @Override
     public List<Cliente> verClientes() {
-        List<Cliente> listaClientes = iClienteRepo.findAll();
-        return listaClientes;
+        return iClienteRepo.findAll();
     }
 
     //MÉTODO PARA BUSCAR UN SOLO CLIENTE

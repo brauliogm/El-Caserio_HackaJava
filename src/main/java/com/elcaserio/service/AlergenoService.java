@@ -34,15 +34,13 @@ public class AlergenoService implements IAlergenoService {
     //MÉTODO PARA VER LA LISTA COMPLETA
     @Override
     public List<Alergeno> verAlergenos() {
-        List<Alergeno> listaAlergenos = alergenoRepo.findAll();
-        return listaAlergenos;
+        return alergenoRepo.findAll();
     }
 
     // MÉTODO PARA BUSCAR UNO SOLO
     @Override
     public Alergeno buscarAlergeno(int id) {
-        Alergeno alergeno = alergenoRepo.findById(id).orElse(null);
-        return alergeno;
+        return alergenoRepo.findById(id).orElse(null);
     }
 
     // MÉTODO PARA MODIFICARLO
