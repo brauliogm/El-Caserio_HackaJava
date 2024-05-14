@@ -22,3 +22,20 @@
     height: fit-content;
     width: fit-content;
 }
+
+/* Animacion de las burguers */
+
+.destacados img {
+    /* Propiedades de la imagen cuando no está en hover */
+    transition: all 400ms ease-in-out;
+}
+
+.destacados:hover img {
+    /* Propiedades de la imagen cuando está en hover */
+    transform: scale(1.03);
+}
+
+.destacados:not(:hover) img {
+    /* Propiedades de la imagen cuando no está en hover */
+    transform: scale(1);
+}
