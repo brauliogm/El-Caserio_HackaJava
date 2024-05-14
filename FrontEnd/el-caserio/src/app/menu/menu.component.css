@@ -1,6 +1,24 @@
+/*Barra lateral*/
+.accordion-button{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
 .list-group-item{
     border: none;
-    pointer-events: all;
+    color: white;
 }
 
 
+/*Organizador*/
+/*
+.sort-by{
+    border-radius: 6px;
+    border: gray solid 1px;
+}
+
+/*Productos*/
+.tamanio-boton{
+    height: fit-content;
+    width: fit-content;
+}

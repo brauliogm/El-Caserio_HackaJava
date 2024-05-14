@@ -1,4 +1,5 @@
 <div class="container my-4">
+  <div class="row">
     <!--barra lateral-->
     <div class="col-md-3 pe-4">
         <!--Categoria-->
@@ -70,26 +71,71 @@
     </div>
 
     <!--contenido principal-->
-    <div class="col-md-9">
+    <div class="col-md-9 pe-4">
         <!--Barra para organizar-->
         <div class="row">
-            <div class="col-md-12">
-
+            <div class="col-md-12 sort-by p-1 pe-0">
+              <div class="row col-md-12 p-1 d-flex justify-content-end">
+                <p class="m-2 me-0 col-md-2 d-flex justify-content-end">Ordenar por:</p>
+                <select class="col-md-3" name="" id="">
+                  <option value="">Default</option>
+                  <option value="">Nombre (A - Z)</option>
+                  <option value="">Nombre (Z - A)</option>
+                  <option value="">Precio (Menor - Mayor)</option>
+                  <option value="">Precio (Mayor - Menor)</option>
+                </select>
+              </div>
             </div>
         </div>
 
         <!--productos-->
-        <div class="row">
-            <div class="col-md-12">
-    
+        <div class="row my-4">
+            <div class="col-md-12 p-0">
+              <div class="row">
+                <!--Producto-->
+                <div class="col-sm-6 col-md-4">
+                  <div class="card">
+                    <img src="../../assets/burger.png" class="d-block w-100" alt="...">
+                    <div class="row m-3 d-flex justify-content-end">
+                      <button type="button" class="btn btn-primary m-1 tamanio-boton">Fav</button>
+                      <button type="button" class="btn btn-primary m-1 tamanio-boton">Car</button>
+                    </div>
+                  </div>
+                  <div class="m-2 d-flex justify-content-center">
+                    <h5>Burguer premium</h5>
+                  </div>
+                  <div class="m-2 d-flex justify-content-center">
+                    <h4>$15.00</h4>
+                  </div>
+                </div>
+                
+              </div>
+              
             </div>
         </div>
 
         <!--Paginacion-->
         <div class="row">
-            <div class="col-md-12">
-
+            <div class="col-md-12 ">
+              <nav aria-label="">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item">
+                    <a class="page-link" href="" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="">1</a></li>
+                  <li class="page-item"><a class="page-link" href="">2</a></li>
+                  <li class="page-item"><a class="page-link" href="">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
         </div>
     </div>
+  </div>
 </div>
