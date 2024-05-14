@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter @Setter
 @Entity
-public class Producto {
+public class Producto extends Carrito {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

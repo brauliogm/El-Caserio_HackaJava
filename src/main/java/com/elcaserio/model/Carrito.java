@@ -1,37 +1,37 @@
 package com.elcaserio.model;
 
-public class Carrito extends Pedido {
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-    public Carrito(Long id, Cliente cliente) {
-        super(id, cliente);
+import java.util.List;
+
+@Getter @Setter
+@Entity
+public class Carrito {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+    @ManyToMany
+    private List<Producto> listaProductos;
+    private double totalCarrito;
+
+    public Carrito() {
     }
 
-    // Método para vaciar el carrito
-    public void vaciarCarrito() {
-        this.getProductos().clear();
-    }
-
-    // Método para mostrar los productos en el carrito
-    public void mostrarProductos() {
-        for (Producto producto : getProductos()) {
-            System.out.println(producto);
-        }
-    }
-
-    // Método para calcular el precio total del carrito
-    public double calcularPrecioTotal() {
-        return calcularTotal();
+    public Carrito(Long id, List<Producto> listaProductos, double totalCarrito) {
+        this.id = id;
+        this.listaProductos = listaProductos;
+        this.totalCarrito = totalCarrito;
     }
 
     @Override
     public String toString() {
         return "Carrito{" +
-                "id=" + getId() +
-                ", productos=" + getProductos() +
-                ", cliente=" + getCliente() +
-                ", estado=" + getEstado() +
-                ", fechaPedido=" + getFechaPedido() +
+                "id=" + id +
+                ", listaProductos=" + listaProductos +
+                ", totalCarrito=" + totalCarrito +
                 '}';
     }
-
 }
