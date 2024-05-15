@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
+import { ProductoDetallesComponent } from './producto-detalles/producto-detalles.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenuComponent } from './menu/menu.component';
     NavBarComponent,
     LandingPageComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    ProductoDetallesComponent
   ],
   imports: [
     BrowserModule,
