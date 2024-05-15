@@ -15,7 +15,7 @@
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                       <div class="accordion-body">
                           <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
                               <div>
                                   <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="firstRadio" checked>
                                   <label class="form-check-label" for="firstRadio">
@@ -24,7 +24,7 @@
                               </div>
                               <span class="badge text-bg-primary rounded-pill">1</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
                               <div>
                                   <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="secondRadio">
                                   <label class="form-check-label" for="secondRadio">
@@ -33,7 +33,7 @@
                               </div>
                               <span class="badge text-bg-primary rounded-pill">1</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
                               <div>
                                   <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="3Radio">
                                   <label class="form-check-label" for="3Radio">
@@ -42,8 +42,8 @@
                               </div>
                               <span class="badge text-bg-primary rounded-pill">1</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              <div>
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+                              <div class="d-flex align-items-center">
                                   <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="4Radio">
                                   <label class="form-check-label" for="4Radio">
                                     Combinados Especiales
@@ -51,7 +51,7 @@
                               </div>
                               <span class="badge text-bg-primary rounded-pill">1</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
                               <div>
                                   <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="5Radio">
                                   <label class="form-check-label" for="5Radio">
@@ -60,37 +60,37 @@
                               </div>
                               <span class="badge text-bg-primary rounded-pill">1</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
                               <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="5Radio">
-                                  <label class="form-check-label" for="5Radio">
+                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="6Radio">
+                                  <label class="form-check-label" for="6Radio">
                                     Sandwiches
                                   </label>
                               </div>
                               <span class="badge text-bg-primary rounded-pill">1</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
                               <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="5Radio">
-                                  <label class="form-check-label" for="5Radio">
+                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="7Radio">
+                                  <label class="form-check-label" for="7Radio">
                                     Bocadillos
                                   </label>
                               </div>
                               <span class="badge text-bg-primary rounded-pill">1</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
                               <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="5Radio">
-                                  <label class="form-check-label" for="5Radio">
+                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="8Radio">
+                                  <label class="form-check-label" for="8Radio">
                                     Perritos
                                   </label>
                               </div>
                               <span class="badge text-bg-primary rounded-pill">1</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
                               <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="5Radio">
-                                  <label class="form-check-label" for="5Radio">
+                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="9Radio">
+                                  <label class="form-check-label" for="9Radio">
                                     Postres
                                   </label>
                               </div>
@@ -131,11 +131,15 @@
                 <!--Producto-->
                 <div class="col-sm-6 col-md-4 mb-4 destacados">
                   <div class="card">
-                    <img src="../../assets/burger.png" class="d-block w-100" alt="...">
-                    <div class="px-2">
-                      <div class="m-1">
-                        <h5>Burguer premium</h5>
+                    <a class="enlace" routerLink="/producto-detalles">
+                      <img src="../../assets/burger.png" class="d-block w-100" alt="...">
+                      <div class="px-2">
+                        <div class="m-1">
+                          <h5>Burguer premium</h5>
+                        </div>
                       </div>
+                    </a>
+                    <div class="px-2">
                       <div class="m-1">
                         <h4>$15.00</h4>
                       </div>

@@ -9,6 +9,10 @@
     color: white;
 }
 
+.categoria{
+    white-space-collapse: break-spaces;
+    text-wrap: wrap;
+}
 
 /*Organizador*/
 /*
@@ -38,4 +42,11 @@
 .destacados:not(:hover) img {
     /* Propiedades de la imagen cuando no está en hover */
     transform: scale(1);
+}
+
+/*Enlace al producto*/
+
+.enlace{
+    text-decoration: none;
+    color: rgb(222,226,218);
 }
