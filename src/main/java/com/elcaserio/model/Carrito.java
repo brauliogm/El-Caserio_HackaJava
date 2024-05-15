@@ -15,15 +15,15 @@ public class Carrito {
     private Long id;
     @ManyToMany
     private List<Producto> listaProductos;
-    private double totalCarrito;
+    @ManyToOne
+    private Cliente cliente;
 
     public Carrito() {
     }
 
-    public Carrito(Long id, List<Producto> listaProductos, double totalCarrito) {
+    public Carrito(Long id, List<Producto> listaProductos) {
         this.id = id;
         this.listaProductos = listaProductos;
-        this.totalCarrito = totalCarrito;
     }
 
     @Override
@@ -31,7 +31,6 @@ public class Carrito {
         return "Carrito{" +
                 "id=" + id +
                 ", listaProductos=" + listaProductos +
-                ", totalCarrito=" + totalCarrito +
                 '}';
     }
 }

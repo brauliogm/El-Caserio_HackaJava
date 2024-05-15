@@ -1,6 +1,8 @@
 package com.elcaserio.service;
 
+import com.elcaserio.model.Carrito;
 import com.elcaserio.model.Cliente;
+import com.elcaserio.repository.ICarritoRepository;
 import com.elcaserio.repository.IClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,9 @@ public class ClienteService implements IClienteService {
 
     @Autowired
     private IClienteRepository iClienteRepo;
+
+    @Autowired
+    private ICarritoRepository iCarritoRepo;
 
     //MÉTODO PARA CREAR UN CLIENTE
     @Override
@@ -48,4 +53,6 @@ public class ClienteService implements IClienteService {
     public void modificarCliente(Cliente cliente) {
         iClienteRepo.save(cliente);
     }
+
+
 }

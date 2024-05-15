@@ -1,6 +1,8 @@
 package com.elcaserio.service;
 
+import com.elcaserio.model.Carrito;
 import com.elcaserio.model.Cliente;
+import com.elcaserio.model.Producto;
 
 import java.util.List;
 

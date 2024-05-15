@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter @Setter
 @Entity
 public class Cliente {
@@ -16,13 +14,13 @@ public class Cliente {
     private String nombre;
     private String telefono;
     private String email;
-    @ManyToMany
-    private List<DireccionCliente> direccionCliente;
+    @OneToOne
+    private DireccionCliente direccionCliente;
 
     public Cliente() {
     }
 
-    public Cliente(Long id, String nombre, String telefono, String email, List<DireccionCliente> direccionCliente) {
+    public Cliente(Long id, String nombre, String telefono, String email, DireccionCliente direccionCliente) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
