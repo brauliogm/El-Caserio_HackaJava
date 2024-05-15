@@ -1,0 +1,8 @@
+.precio{
+    color: rgb(255,179,21);
+    font-weight: 500;
+}
+
+.caracteristicas h5{
+    display: inline;
+}
