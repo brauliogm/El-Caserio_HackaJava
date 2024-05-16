@@ -2,14 +2,12 @@ package com.elcaserio.service;
 
 import com.elcaserio.model.Carrito;
 
-import java.util.List;
-
 public interface ICarritoService {
 
     public void crearCarrito(Carrito carrito);
 
-    public List<Carrito> verCarrito();
+    public Carrito verCarrito(Long idCarrito);
 
-    public void vaciarCarrito();
+    public void vaciarCarrito(Long idCarrito);
 
 }

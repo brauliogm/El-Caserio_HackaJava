@@ -5,17 +5,15 @@ import com.elcaserio.service.ICarritoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 public class CarritoController {
 
     @Autowired
     ICarritoService iCarritoService;
 
-    @GetMapping("/verCarrito")
-    public List<Carrito> verCarrito() {
-        return iCarritoService.verCarrito();
+    @GetMapping("/verCarrito/{id}")
+    public Carrito verCarrito(@PathVariable Long idCarrito) {
+        return iCarritoService.verCarrito(idCarrito);
     }
 
     @PostMapping("/crearCarrito")
@@ -24,10 +22,10 @@ public class CarritoController {
         return carrito;
     }
 
-    @DeleteMapping("/vaciarCarrito")
-    public String vaciarCarrito() {
-        iCarritoService.vaciarCarrito();
-        return "Carrito vaciado correctamente.";
+    @DeleteMapping("/vaciarCarrito/{id}")
+    public String vaciarCarrito(@PathVariable Long idCarrito) {
+        iCarritoService.vaciarCarrito(idCarrito);
+        return "Carrito eliminado correctamente.";
     }
 
 }

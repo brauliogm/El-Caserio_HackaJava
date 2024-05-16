@@ -14,23 +14,24 @@ public class Carrito {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @ManyToMany
-    private List<Producto> listaProductos;
+    private List<Producto> productos;
     @ManyToOne
     private Cliente cliente;
 
     public Carrito() {
     }
 
-    public Carrito(Long id, List<Producto> listaProductos) {
+    public Carrito(Long id, List<Producto> productos, Cliente cliente) {
         this.id = id;
-        this.listaProductos = listaProductos;
+        this.productos = productos;
+        this.cliente = cliente;
     }
 
     @Override
     public String toString() {
         return "Carrito{" +
                 "id=" + id +
-                ", listaProductos=" + listaProductos +
-                '}';
+                ", productos=" + productos +
+                ", cliente=" + cliente;
     }
 }
