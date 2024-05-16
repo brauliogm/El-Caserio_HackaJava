@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductoDetallesComponent } from './producto-detalles/producto-detalles.component';
+import { ClickOutsideDirective } from './click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductoDetallesComponent } from './producto-detalles/producto-detalles
     LandingPageComponent,
     FooterComponent,
     MenuComponent,
-    ProductoDetallesComponent
+    ProductoDetallesComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,

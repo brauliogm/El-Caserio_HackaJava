@@ -11,14 +11,16 @@ export class NavBarComponent {
   
   isMenuOpen = false;
 
-  constructor() { }
+  constructor(){}
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+    console.log('Toggle menu:', this.isMenuOpen);
   }
 
   closeMenu(): void {
     this.isMenuOpen = false;
+    console.log('Close menu');
   }
 
 }
