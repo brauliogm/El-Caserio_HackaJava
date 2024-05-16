@@ -6,3 +6,28 @@
 .caracteristicas h5{
     display: inline;
 }
+
+.tamanio-boton{
+    height: fit-content;
+    width: fit-content;
+}
+
+.cantidad{
+    width: 80px;
+    height: 30px;
+}
+
+.descripcion{
+    background-color: rgb(43,48,53);
+    padding: 15px;
+    border: solid 1px rgb(105, 109, 112);
+}
+
+.descripcion h5{
+    height: fit-content;
+    width: fit-content;
+    background-color: rgb(255,179,21);
+    padding: 15px 25px;
+    color: black;
+}
+
