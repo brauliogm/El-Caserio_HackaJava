@@ -1,0 +1,32 @@
+.uncheck-progreso{
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    border: 3px solid white;
+}
+
+.check-progreso{
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: white;
+}
+
+.alineado{
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.tamanio-boton{
+    height: fit-content;
+    width: fit-content;
+}
+
+.parrafo{
+    white-space-collapse: break-spaces;
+    text-wrap: wrap;
+}
+
+.total{
+    margin-right: -12px;
+}

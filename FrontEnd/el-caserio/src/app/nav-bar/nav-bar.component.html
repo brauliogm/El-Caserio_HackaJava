@@ -19,7 +19,7 @@
             <a class="nav-link" routerLink="/menu" routerLinkActive="active">Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/ds" routerLinkActive="active">Pedido</a>
+            <a class="nav-link" routerLink="/pedido" routerLinkActive="active">Pedido</a>
           </li>
           
         </ul>
@@ -27,12 +27,12 @@
     </div>
 
     <div class="col-md-4 d-flex justify-content-end">
-      <div class="nav-item dropdown " >
-        <a (click)="toggleMenu()" class="nav-link dropdown-toggle car-button" role="button" aria-expanded="false">
+      <div class="nav-item dropdown" >
+        <a (mouseenter)="toggleMenu()" class="nav-link dropdown-toggle car-button" role="button" aria-expanded="false">
           Car
         </a>
-        <div class="capa"></div>
-        <ul class="carrito" *ngIf="isMenuOpen">
+        <div class="capa" (click)="toggleMenu()" *ngIf="isMenuOpen"></div>
+        <ul class="carrito" *ngIf="isMenuOpen" (mouseleave)="closeMenu()">
           <li class="px-3 py-1">
             <div class="row col-md-12">
               <div class="col-md-3">

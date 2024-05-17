@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductoDetallesComponent } from './producto-detalles/producto-detalles.component';
 import { ClickOutsideDirective } from './click-outside.directive';
+import { PedidoComponent } from './pedido/pedido.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ClickOutsideDirective } from './click-outside.directive';
     FooterComponent,
     MenuComponent,
     ProductoDetallesComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    PedidoComponent
   ],
   imports: [
     BrowserModule,
