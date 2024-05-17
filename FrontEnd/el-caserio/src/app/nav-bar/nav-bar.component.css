@@ -13,6 +13,21 @@
     padding: 8px 0px 0px 0px;
     list-style: none;
     border-radius: 5px;
+    z-index: 6;
+}
+
+.car-button{
+    z-index: 7;
+}
+
+.capa{
+    z-index: 5;
+    background-color: rgba(54, 54, 185, 0);
+    position: fixed; /* Fija el div en la ventana del navegador */
+    top: 0;          /* Posiciona el div en la parte superior */
+    left: 0;         /* Posiciona el div en la parte izquierda */
+    width: 100vw;    /* Ancho completo de la ventana */
+    height: 100vh;   /* Altura completa de la ventana */
 }
 
 #menu {
