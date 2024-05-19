@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("")
+@CrossOrigin(value = "http://localhost:4200")
 public class CarritoController {
 
     @Autowired
