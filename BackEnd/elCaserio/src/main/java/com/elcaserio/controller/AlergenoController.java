@@ -8,37 +8,37 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("el-caserio/alergeno")
 @CrossOrigin(value = "http://localhost:4200")
 public class AlergenoController {
 
     @Autowired
     private IAlergenoService iAlergenoService;
 
-    @GetMapping("/verAlergenos")
+    @GetMapping()
     public List<Alergeno> verAlergenos() {
         return iAlergenoService.verAlergenos();
     }
 
-    @PostMapping("/crearAlergeno")
+    @PostMapping()
     public String crearAlergeno(@RequestBody Alergeno alergeno) {
         iAlergenoService.crearAlergeno(alergeno);
         return "Alergeno creado correctamente";
     }
 
-    @DeleteMapping("/eliminarAlergeno/{id}")
+    @DeleteMapping("/{id}")
     public String eliminarAlergeno(@PathVariable int id) {
         iAlergenoService.eliminarAlergeno(id);
         return "Alergeno eliminado correctamente";
     }
 
-    @DeleteMapping("/eliminarAlergenos")
+    @DeleteMapping()
     public String eliminarTodo() {
         iAlergenoService.eliminarTodo();
         return "Se han eliminado todos los Alérgenos de la base de datos correctamente.";
     }
 
-    @PutMapping("/modificarAlergeno")
+    @PutMapping("/{id}")
     public String modificarAlergeno(@RequestBody Alergeno alergeno) {
         iAlergenoService.modificarAlergeno(alergeno);
 

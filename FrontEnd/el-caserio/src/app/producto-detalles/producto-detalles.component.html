@@ -20,6 +20,11 @@
                 <p>Premium</p>
                 <h5>Alergenos:</h5>
                 <p>1,2,3,4</p>
+                <div class="d-flex">
+                    <span class="" *ngFor="let alergeno of alergenos">
+                        {{alergeno.nombre}} , 
+                    </span>
+                </div>
                 <hr class="mt-4 mb-1">
             </div>
             <div class="my-4 precio">
