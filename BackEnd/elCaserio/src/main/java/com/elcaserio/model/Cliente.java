@@ -3,7 +3,9 @@ package com.elcaserio.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+@ToString
 @Getter @Setter
 @Entity
 public class Cliente {
@@ -12,6 +14,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nombre;
+    private String apellido;
     private String telefono;
     private String email;
     @OneToOne
@@ -20,23 +23,13 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(Long id, String nombre, String telefono, String email, DireccionCliente direccionCliente) {
+    public Cliente(Long id, String nombre, String apellido, String telefono, String email, DireccionCliente direccionCliente) {
         this.id = id;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
         this.direccionCliente = direccionCliente;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", email='" + email + '\'' +
-                ", direccionCliente=" + direccionCliente +
-                '}';
     }
 
 }
