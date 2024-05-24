@@ -7,11 +7,9 @@ import { Component } from '@angular/core';
 })
 export class PedidoComponent {
 
-  marcador: number = 3;
+  marcador: number = 1;
 
-  constructor(){
-
-  }
+  constructor(){}
 
   ngInit(){
   }
@@ -22,5 +20,13 @@ export class PedidoComponent {
 
   restarMarcador(){
     this.marcador--;
+  }
+
+  confirmarPedido(){
+
+  }
+
+  ventanaDatos(){
+    this.marcador = 2;
   }
 }

@@ -23,10 +23,6 @@
     width: auto;
 }
 
-.fijado{
-    position: fixed;
-}
-
 .tamanio-boton{
     height: fit-content;
     width: fit-content;

@@ -4,6 +4,10 @@
     height: 3rem;
 }
 
+.enlaces{
+    flex-direction: row;
+}
+
 .carrito{
     width: 400px;
     position: absolute;
