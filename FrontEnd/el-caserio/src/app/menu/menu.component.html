@@ -130,6 +130,29 @@
               <div class="row">
 
                 <!--Producto-->
+                <div class="col-sm-6 col-md-4 mb-4 destacados" *ngFor="let producto of productos">
+                  <div class="card">
+                    <a class="enlace" [routerLink]="['/producto-detalles', producto.id]">
+                      <img src="../../assets/burger.png" class="d-block w-100" alt="...">
+                      <div class="px-2">
+                        <div class="m-1">
+                          <h5>{{producto.nombre}}</h5>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="px-2">
+                      <div class="m-1">
+                        <h4>{{producto.precio}}</h4>
+                      </div>
+                    </div>
+                    <div class="row m-3 mt-0 d-flex justify-content-end">
+                      <button type="button" class="btn btn-primary m-1 tamanio-boton">Fav</button>
+                      <button type="button" class="btn btn-primary m-1 tamanio-boton">Car</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!--Producto-->
                 <div class="col-sm-6 col-md-4 mb-4 destacados">
                   <div class="card">
                     <a class="enlace" routerLink="/producto-detalles">

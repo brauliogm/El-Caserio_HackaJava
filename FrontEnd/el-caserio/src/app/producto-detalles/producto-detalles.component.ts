@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Alergeno } from '../models/alergeno';
 import { AlergenoService } from '../services/alergeno.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Producto } from '../models/producto';
 
 @Component({
   selector: 'app-producto-detalles',
@@ -9,13 +10,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./producto-detalles.component.css']
 })
 export class ProductoDetallesComponent {
+
+  producto: Producto;
+  productoId: number;
   alergenos: Alergeno[];
 
-  constructor(private alergenoServise: AlergenoService,
-            private enrutador: Router){}
+  constructor(
+    private route: ActivatedRoute,
+    private alergenoServise: AlergenoService,
+    private enrutador: Router){}
 
   ngOnInit(){
     this.obtenerAlergenos();
+    this.productoId = +this.route.snapshot.paramMap.get('id'); // Obtén el ID de la ruta
   }
 
   private obtenerAlergenos(){

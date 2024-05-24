@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'inicio', component: LandingPageComponent},
   { path: '', redirectTo: 'inicio', pathMatch:'full'},
   { path: 'menu', component: MenuComponent },
-  { path: 'producto-detalles', component: ProductoDetallesComponent },
+  { path: 'producto-detalles/:id', component: ProductoDetallesComponent },
   { path: 'pedido', component: PedidoComponent },
 ];
 
