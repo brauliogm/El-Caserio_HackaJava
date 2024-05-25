@@ -5,46 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="545d5180-ec58-4f3c-a987-83c629cfd245" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/ElCaserioApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/controller/AlergenoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/controller/CarritoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/controller/ClienteController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/controller/DireccionClienteController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/controller/ProductoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/model/Alergeno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/model/Carrito.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/model/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/model/DireccionCliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/model/Producto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/AlergenoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/CarritoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/ClienteRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/DireccionClienteRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/IAlergenoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/ICarritoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/IClienteRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/IDireccionClienteRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/IProductoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/repository/ProductoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/AlergenoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/CarritoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/ClienteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/DireccionClienteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/IAlergenoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/ICarritoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/IClienteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/IDireccionClienteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/IProductoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/elcaserio/service/ProductoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/elcaserio/ElCaserioApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +15,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -72,11 +29,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ElCaserioApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Proyectos/HackaJava/BackEnd/elCaserio",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -104,6 +69,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -112,8 +84,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715544039805</updated>
+      <workItem from="1716661395507" duration="2895000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HackaJava$ElCaserioApplication.ic" NAME="ElCaserioApplication Coverage Results" MODIFIED="1715555092024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("el-caserio/carrito")
 @CrossOrigin(value = "http://localhost:4200")
 public class CarritoController {
 
     @Autowired
     ICarritoService iCarritoService;
 
-    @GetMapping("/verCarrito/{id}")
+    @GetMapping("/{id}")
     public Carrito verCarrito(@PathVariable Long idCarrito) {
         return iCarritoService.verCarrito(idCarrito);
     }
@@ -24,7 +24,7 @@ public class CarritoController {
         return carrito;
     }
 
-    @DeleteMapping("/vaciarCarrito/{id}")
+    @DeleteMapping("/{id}")
     public String vaciarCarrito(@PathVariable Long idCarrito) {
         iCarritoService.vaciarCarrito(idCarrito);
         return "Carrito eliminado correctamente.";

@@ -20,6 +20,11 @@ public class AlergenoController {
         return iAlergenoService.verAlergenos();
     }
 
+    @GetMapping("/{id}")
+    public Alergeno verAlergeno(@PathVariable Long id) {
+        return iAlergenoService.verAlergeno(id);
+    }
+
     @PostMapping()
     public String crearAlergeno(@RequestBody Alergeno alergeno) {
         iAlergenoService.crearAlergeno(alergeno);
