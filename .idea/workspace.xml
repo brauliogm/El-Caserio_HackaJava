@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="545d5180-ec58-4f3c-a987-83c629cfd245" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/elCaserio/src/main/java/com/elcaserio/controller/CarritoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/elCaserio/src/main/java/com/elcaserio/controller/CarritoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/elCaserio/src/main/java/com/elcaserio/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/elCaserio/src/main/java/com/elcaserio/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/elCaserio/src/main/java/com/elcaserio/controller/AlergenoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/elCaserio/src/main/java/com/elcaserio/controller/AlergenoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715544039805</updated>
-      <workItem from="1716661395507" duration="1445000" />
+      <workItem from="1716661395507" duration="2096000" />
     </task>
     <servers />
   </component>
