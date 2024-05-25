@@ -14,8 +14,8 @@ public class CarritoController {
     ICarritoService iCarritoService;
 
     @GetMapping("/{id}")
-    public Carrito verCarrito(@PathVariable Long id) {
-        return iCarritoService.verCarrito(id);
+    public Carrito verCarrito(@PathVariable Long idCarrito) {
+        return iCarritoService.verCarrito(idCarrito);
     }
 
     @PostMapping("/crearCarrito")
@@ -25,8 +25,8 @@ public class CarritoController {
     }
 
     @DeleteMapping("/{id}")
-    public String vaciarCarrito(@PathVariable Long id) {
-        iCarritoService.vaciarCarrito(id);
+    public String vaciarCarrito(@PathVariable Long idCarrito) {
+        iCarritoService.vaciarCarrito(idCarrito);
         return "Carrito eliminado correctamente.";
     }
 
