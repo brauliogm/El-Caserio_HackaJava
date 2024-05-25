@@ -44,10 +44,15 @@ public class ProductoController {
     }
 
     @PutMapping("/{id}")
-    public String modificarProducto(@RequestBody Producto producto) {
-        iProductoService.modificarProducto(producto);
-
-        return "Producto modificado correctamente.";
+    public ResponseEntity<Producto> actualizarProducto(@PathVariable int id, @RequestBody Producto productoRecibido){
+        Producto producto = productoServicio.buscarProductoPorId(id);
+        if (producto == null)
+            throw new RecursoNoEncontradoExcepcion("No se encontro el id: " + id);
+        producto.setDescripcion(productoRecibido.getDescripcion());
+        producto.setPrecio(productoRecibido.getPrecio());
+        producto.setExistencia(productoRecibido.getExistencia());
+        productoServicio.guardarProducto(producto);
+        return ResponseEntity.ok(producto);
     }
 
 }
