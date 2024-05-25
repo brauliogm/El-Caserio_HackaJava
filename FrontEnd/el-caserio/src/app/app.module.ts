@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ProductoDetallesComponent } from './producto-detalles/producto-detalles.component';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { PedidoComponent } from './pedido/pedido.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PedidoComponent } from './pedido/pedido.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxPaginationModule,
     FormsModule,
     HttpClientModule
   ],

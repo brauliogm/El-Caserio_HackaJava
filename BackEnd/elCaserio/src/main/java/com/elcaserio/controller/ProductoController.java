@@ -28,13 +28,13 @@ public class ProductoController {
     @PostMapping()
     public String crearProducto(@RequestBody Producto producto) {
         iProductoService.crearProducto(producto);
-        return "Producto creado correctamente.";
+        return "Producto creado correctamente. " + producto.getNombre();
     }
 
     @DeleteMapping("/{id}")
     public String eliminarProducto(@PathVariable Long id) {
         iProductoService.eliminarProducto(id);
-        return "Producto eliminado correctamente.";
+        return "Producto eliminado correctamente." + id;
     }
 
     @DeleteMapping()

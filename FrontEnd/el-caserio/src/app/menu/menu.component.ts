@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class MenuComponent {
 
   productos: Producto[];
+  page: number = 1;
+  pageSize: number = 6;
 
   constructor(private productoService: ProductoService,
             private enrutador: Router){}
