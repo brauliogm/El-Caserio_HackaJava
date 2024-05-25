@@ -8,42 +8,42 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("el-caserio/direccion-cliente")
 @CrossOrigin(value = "http://localhost:4200")
 public class DireccionClienteController {
 
     @Autowired
     IDireccionClienteService iDireccionClienteService;
 
-    @GetMapping("/verDirecciones")
+    @GetMapping()
     public List<DireccionCliente> verDirecciones() {
         return iDireccionClienteService.verDirecciones();
     }
 
-    @GetMapping("/verDirecciones/{id}")
+    @GetMapping("/{id}")
     public DireccionCliente buscarDireccion(@PathVariable Long id) {
         return iDireccionClienteService.buscarDireccion(id);
     }
 
-    @PostMapping("/agregarDireccion")
+    @PostMapping()
     public String agregarDireccion(@RequestBody DireccionCliente direccionCliente) {
         iDireccionClienteService.agregarDireccion(direccionCliente);
         return "Dirección agregada correctamente";
     }
 
-    @DeleteMapping("/eliminarDireccion{id}")
+    @DeleteMapping("/{id}")
     public String eliminarDireccion(@PathVariable Long id) {
         iDireccionClienteService.eliminarDireccion(id);
         return "Dirección eliminada correctamente.";
     }
 
-    @DeleteMapping("/eliminarDirecciones")
+    @DeleteMapping()
     public String eliminarDirecciones() {
         iDireccionClienteService.eliminarDirecciones();
         return "Se han eliminado todas las direcciones correctamente.";
     }
 
-    @PutMapping("/modificarDireccion")
+    @PutMapping("/{id}")
     public String modificarDireccion(@RequestBody DireccionCliente direccionCliente) {
         iDireccionClienteService.modificarDireccion(direccionCliente);
         return "Dirección modificada correctamente.";
