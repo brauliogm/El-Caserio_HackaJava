@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductoDetallesComponent } from './producto-detalles/producto-detalles.component';
@@ -13,8 +13,12 @@ const routes: Routes = [
   { path: 'pedido', component: PedidoComponent },
 ];
 
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'top', // Esto asegura que la posición se restablezca al inicio
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
