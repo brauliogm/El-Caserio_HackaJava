@@ -15,4 +15,8 @@ export class AlergenoService {
     return this.clientHttp.get<Alergeno[]>(this.urlBase);
   }
 
+  obtenerAlergenoPorId(id: number){
+    return this.clientHttp.get<Alergeno>(`${this.urlBase}/${id}`);
+  }
+
 }

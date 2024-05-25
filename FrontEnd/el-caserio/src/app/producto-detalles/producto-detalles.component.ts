@@ -3,6 +3,9 @@ import { Alergeno } from '../models/alergeno';
 import { AlergenoService } from '../services/alergeno.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from '../models/producto';
+import { ProductoService } from '../services/producto.service';
+import { switchMap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-producto-detalles',
@@ -13,28 +16,27 @@ export class ProductoDetallesComponent {
 
   producto: Producto;
   productoId: number;
-  alergenos: Alergeno[];
 
   constructor(
     private route: ActivatedRoute,
-    private alergenoServise: AlergenoService,
+    private productoServise: ProductoService,
     private enrutador: Router){}
 
   ngOnInit(){
-    this.obtenerAlergenos();
-    this.productoId = +this.route.snapshot.paramMap.get('id'); // Obtén el ID de la ruta
+    this.productoId = this.route.snapshot.params['id'];
+    this.obtenerProductoPorId();
   }
 
-  private obtenerAlergenos(){
-    this.alergenoServise.obtenerAlergenosLista().subscribe(
+
+  private obtenerProductoPorId(){
+    this.productoServise.obtenerProductoPorId(this.productoId).subscribe(
       (datos => {
-        this.alergenos = datos;
+        this.producto = datos;
       })
-    );
-  }
-  
+    )
+  }  
 
-  zoom(){
+  zoom(){ //metodo para mostrar la imagen del producto en grande
     console.log("hola");
     
   }

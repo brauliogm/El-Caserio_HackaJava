@@ -27,6 +27,10 @@
     width: fit-content;
 }
 
+.titulo-producto{
+    display: contents;
+}
+
 /* Animacion de las burguers */
 
 .destacados img {
