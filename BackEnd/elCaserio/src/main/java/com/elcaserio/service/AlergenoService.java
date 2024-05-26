@@ -21,7 +21,7 @@ public class AlergenoService implements IAlergenoService {
 
     // MÉTODO PARA ELIMINAR
     @Override
-    public void eliminarAlergeno(int id) {
+    public void eliminarAlergeno(Long id) {
         alergenoRepo.deleteById(id);
     }
 
@@ -39,7 +39,7 @@ public class AlergenoService implements IAlergenoService {
 
     // MÉTODO PARA BUSCAR UNO SOLO
     @Override
-    public Alergeno buscarAlergeno(int id) {
+    public Alergeno buscarAlergeno(Long id) {
         return alergenoRepo.findById(id).orElse(null);
     }
 

@@ -1,8 +1,10 @@
 package com.elcaserio.controller;
 
+import com.elcaserio.exepcion.RecursoNoEncontradoExcepcion;
 import com.elcaserio.model.Producto;
 import com.elcaserio.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,14 +46,14 @@ public class ProductoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Producto> actualizarProducto(@PathVariable int id, @RequestBody Producto productoRecibido){
-        Producto producto = productoServicio.buscarProductoPorId(id);
+    public ResponseEntity<Producto> actualizarProducto(@PathVariable Long id, @RequestBody Producto productoRecibido){
+        Producto producto = iProductoService.verProducto(id);
         if (producto == null)
             throw new RecursoNoEncontradoExcepcion("No se encontro el id: " + id);
         producto.setDescripcion(productoRecibido.getDescripcion());
         producto.setPrecio(productoRecibido.getPrecio());
-        producto.setExistencia(productoRecibido.getExistencia());
-        productoServicio.guardarProducto(producto);
+        producto.setCategoria(productoRecibido.getCategoria());
+        iProductoService.modificarProducto(producto);
         return ResponseEntity.ok(producto);
     }
 

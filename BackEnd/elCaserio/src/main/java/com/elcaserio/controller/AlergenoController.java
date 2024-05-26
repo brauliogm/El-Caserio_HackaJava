@@ -22,7 +22,7 @@ public class AlergenoController {
 
     @GetMapping("/{id}")
     public Alergeno verAlergeno(@PathVariable Long id) {
-        return iAlergenoService.verAlergeno(id);
+        return iAlergenoService.buscarAlergeno(id);
     }
 
     @PostMapping()
@@ -32,7 +32,7 @@ public class AlergenoController {
     }
 
     @DeleteMapping("/{id}")
-    public String eliminarAlergeno(@PathVariable int id) {
+    public String eliminarAlergeno(@PathVariable Long id) {
         iAlergenoService.eliminarAlergeno(id);
         return "Alergeno eliminado correctamente";
     }

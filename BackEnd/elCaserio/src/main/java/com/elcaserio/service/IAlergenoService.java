@@ -8,13 +8,13 @@ public interface IAlergenoService {
 
     public void crearAlergeno(Alergeno alergeno);
 
-    public void eliminarAlergeno(int id);
+    public void eliminarAlergeno(Long id);
 
     public void eliminarTodo();
 
     public List<Alergeno> verAlergenos();
 
-    public Alergeno buscarAlergeno(int id);
+    public Alergeno buscarAlergeno(Long id);
 
     public void modificarAlergeno(Alergeno alergeno);
 
