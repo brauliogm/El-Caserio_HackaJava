@@ -14,90 +14,21 @@
                     </h2>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                       <div class="accordion-body">
-                          <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="firstRadio" checked>
-                                  <label class="form-check-label" for="firstRadio">
-                                    Todos
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="secondRadio">
-                                  <label class="form-check-label" for="secondRadio">
-                                    Burguers
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="3Radio">
-                                  <label class="form-check-label" for="3Radio">
-                                    Entrantes
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div class="d-flex align-items-center">
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="4Radio">
-                                  <label class="form-check-label" for="4Radio">
-                                    Combinados Especiales
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="5Radio">
-                                  <label class="form-check-label" for="5Radio">
-                                    Ensaladas
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="6Radio">
-                                  <label class="form-check-label" for="6Radio">
-                                    Sandwiches
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="7Radio">
-                                  <label class="form-check-label" for="7Radio">
-                                    Bocadillos
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="8Radio">
-                                  <label class="form-check-label" for="8Radio">
-                                    Perritos
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-                              <div>
-                                  <input class="form-check-input me-2" type="radio" name="listGroupRadio" value="" id="9Radio">
-                                  <label class="form-check-label" for="9Radio">
-                                    Postres
-                                  </label>
-                              </div>
-                              <span class="badge text-bg-primary rounded-pill">1</span>
-                            </li>
-                              
-                          </ul>
+                        <ul class="list-group">
+                          <li class="list-group-item d-flex justify-content-between align-items-center gap-3" *ngFor="let option of options">
+                            <div>
+                              <input 
+                                class="form-check-input me-2" 
+                                type="radio" 
+                                name="listGroupRadio" 
+                                [value]="option.value" 
+                                [(ngModel)]="selectedOption" 
+                                [id]="option.id">
+                              <label class="form-check-label" [for]="option.id">{{ option.label }}</label>
+                            </div>
+                            <span class="badge text-bg-primary rounded-pill">1</span>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
