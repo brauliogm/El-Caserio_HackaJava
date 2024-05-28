@@ -10,9 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductoDetallesComponent } from './producto-detalles/producto-detalles.component';
-import { ClickOutsideDirective } from './click-outside.directive';
 import { PedidoComponent } from './pedido/pedido.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MenuSortPipe } from './menu-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FooterComponent,
     MenuComponent,
     ProductoDetallesComponent,
-    ClickOutsideDirective,
-    PedidoComponent
+    PedidoComponent,
+    MenuSortPipe
   ],
   imports: [
     BrowserModule,

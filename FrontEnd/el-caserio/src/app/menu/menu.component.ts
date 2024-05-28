@@ -11,13 +11,19 @@ import { Router } from '@angular/router';
 export class MenuComponent {
 
   productos: Producto[];
+  productosFiltrados: Producto[];
+  filtrado: boolean = false;
+
+  // variables para la paginacion
   page: number = 1;
   pageSize: number = 6;
 
+  sortOrder: string = ''; // variables para ordenar los productos
+
   // Definir las opciones del grupo de radio
   options = [
-    { id: '0', value: 'total', label: 'Todos' },
-    { id: '1', value: 'burgers', label: 'Burguers' },
+    { id: '0', value: 'todos', label: 'Todos' },
+    { id: '1', value: 'hamburguesa', label: 'Hamburguesa' },
     { id: '2', value: 'entrantes', label: 'Entrantes' },
     { id: '3', value: 'combinados especiales', label: 'Combinados Especiales' },
     { id: '4', value: 'ensaladas', label: 'Ensaladas' },
@@ -26,10 +32,8 @@ export class MenuComponent {
     { id: '7', value: 'perritos', label: 'Perritos' },
     { id: '8', value: 'postres', label: 'Postres' },
   ];
-
   // Variable para almacenar la opción seleccionada
   selectedOption: string = this.options[0].value;
-  resultado: string = '';
 
   constructor(private productoService: ProductoService,
             private enrutador: Router){}
@@ -47,12 +51,38 @@ export class MenuComponent {
     );
   }
 
-  filtrado(): number{
-    return this.productos.length;
+  cantidadCategoria(categoria: string): number{
+    let cantidad: number = 0;
+
+    if (categoria == 'Todos') {
+      return this.productos.length;
+    }
+
+    this.productos.forEach(producto => {
+      if (producto.categoria == categoria) {
+        cantidad++;
+      }
+    });
+
+    return cantidad;
   }
 
-  cantidadCategoria(categoria: string){
+  filtradoCategoria(categoria: string){
+    this.filtrado = true;
 
+    this.productosFiltrados = this.productos.filter(producto => producto.categoria == categoria);
+    
+    if (categoria == 'Todos') {
+      this.filtrado = false;
+    }
   }
 
+  onSortOrderChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.sortOrder = selectElement.value;
+  }
+  onPageSize(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.pageSize = parseInt(selectElement.value);
+  }
 }

@@ -16,7 +16,7 @@
                       <div class="accordion-body">
                         <ul class="list-group">
                           <li class="list-group-item d-flex justify-content-between align-items-center gap-3" *ngFor="let option of options">
-                            <div>
+                            <div (click)="filtradoCategoria(option.label)">
                               <input 
                                 class="form-check-input me-2" 
                                 type="radio" 
@@ -26,13 +26,13 @@
                                 [id]="option.id">
                               <label class="form-check-label" [for]="option.id">{{ option.label }}</label>
                             </div>
-                            <span class="badge text-bg-primary rounded-pill">1</span>
+                            <span class="badge text-bg-primary rounded-pill">{{cantidadCategoria(option.label)}}</span>
                           </li>
                         </ul>
                       </div>
                     </div>
                   </div>
-              </div>
+                </div>
           </div>
       </div>  
     </div>
@@ -41,15 +41,13 @@
     <div class="col-md-9">
         <!--Barra para organizar-->
         <div class="row">
-            <div class="col-md-12 sort-by">
+            <div class="col-md-12">
               <div class="row col-md-12 p-3 d-flex justify-content-end">
                 <p class="m-2 me-0 col-md-2 d-flex justify-content-end">Ordenar por:</p>
-                <select class="col-md-3" name="" id="">
-                  <option value="">Default</option>
-                  <option value="">Nombre (A - Z)</option>
-                  <option value="">Nombre (Z - A)</option>
-                  <option value="">Precio (Menor - Mayor)</option>
-                  <option value="">Precio (Mayor - Menor)</option>
+                <select class="col-md-3" (change)="onSortOrderChange($event)">
+                  <option value=""></option>
+                  <option value="asc">Precio (Menor - Mayor)</option>
+                  <option value="desc">Precio (Mayor - Menor)</option>
                 </select>
               </div>
             </div>
@@ -58,10 +56,10 @@
         <!--productos-->
         <div class="row my-4">
             <div class="col-md-12">
-              <div class="row">
+              <div class="row" *ngIf="!filtrado">
 
                 <!--Producto-->
-                <div class="col-sm-6 col-md-4 mb-4 destacados" *ngFor="let producto of productos | paginate: { itemsPerPage: pageSize, currentPage: page }">
+                <div class="col-sm-6 col-md-4 mb-4 destacados" *ngFor="let producto of productos | productSort: sortOrder | paginate: { itemsPerPage: pageSize, currentPage: page }">
                   <div class="card">
                     <a class="enlace" [routerLink]="['/producto-detalles', producto.id]">
                       <img src="../../assets/burger.png" class="d-block w-100" alt="...">
@@ -82,6 +80,32 @@
                     </div>
                   </div>
                 </div>
+                                
+              </div>
+              <div class="row" *ngIf="filtrado">
+
+                <!-- productos filtrados -->
+                <div class="col-sm-6 col-md-4 mb-4 destacados" *ngFor="let producto of productosFiltrados | productSort: sortOrder | paginate: { itemsPerPage: pageSize, currentPage: page }">
+                  <div class="card">
+                    <a class="enlace" [routerLink]="['/producto-detalles', producto.id]">
+                      <img src="../../assets/burger.png" class="d-block w-100" alt="...">
+                      <div class="px-2">
+                        <div class="m-1">
+                          <h5>{{producto.nombre}}</h5>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="px-2">
+                      <div class="m-1 d-flex justify-content-between align-items-center">
+                        <h4 class="titulo-producto">{{producto.precio}}</h4>
+                        <div class="row m-2">
+                          <!-- <button type="button" class="btn btn-primary m-1 tamanio-boton">Fav</button> -->
+                          <button type="button" class="btn btn-primary tamanio-boton">Add to Car</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
 
               </div>
               
@@ -90,8 +114,20 @@
 
         <!--Paginacion-->
         <div class="row">
-          <div class="col-md-12 d-flex justify-content-end">
+          
+          
+          <div class="col-md-12 d-flex justify-content-between">
+            <div class="d-flex align-items-center gap-3">
+              <p class="mb-0">Elementos por pagina:</p>
+              <select class="col-3" (change)="onPageSize($event)">
+                <option value="6">6</option>
+                <option value="9">9</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+
             <pagination-controls 
+            class="d-flex align-items-center mt-3"
             (pageChange)="page = $event"
             previousLabel=""
             nextLabel=""
