@@ -1,6 +1,6 @@
 # HackaJava
 
-## Versiones ##
+## Versiones utilizadas ##
 
 Version de Node utilizada v18.20.2 LTS  
   https://nodejs.org/en/download
@@ -14,6 +14,9 @@ Version de Angular utilizada CLI: 16.2.12
 
   Para instalar una version especifica (en PowerShell):
     npm install -g @angular/cli@16.2.12
+
+Instalar la biblioteca para la paginación para el correcto funcionamiento
+  npm install ngx-pagination
 
 ## Iniciar la aplicacion ##
 

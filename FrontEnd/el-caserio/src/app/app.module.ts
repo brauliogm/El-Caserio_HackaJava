@@ -28,9 +28,9 @@ import { MenuSortPipe } from './menu-sort.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
