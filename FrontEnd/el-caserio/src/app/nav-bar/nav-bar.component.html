@@ -33,7 +33,7 @@
     <div class="col-md-4 d-flex justify-content-end">
       <div class="nav-item dropdown" >
         <a (mouseenter)="toggleMenu()" class="nav-link dropdown-toggle car-button" role="button" aria-expanded="false">
-          Car <span class="badge text-bg-primary rounded-pill" *ngIf="productosEnCarrito != 0">{{productosEnCarrito}}</span>
+          Car <span class="badge text-bg-secondary rounded-pill" *ngIf="listaDeProductos.length != 0">{{listaDeProductos.length}}</span>
         </a>
         <div class="capa" (click)="toggleMenu()" *ngIf="isMenuOpen"></div>
         <ul class="carrito" *ngIf="isMenuOpen" (mouseleave)="closeMenu()">
@@ -75,7 +75,7 @@
           <li class="px-3 py-1 mb-1">
             <div class="row col-md-12 p-0">
               <div class="col-md-7">
-                <h5>Total:</h5>
+                <h5>Subtotal del carrito :</h5>
               </div>
               <div class="col-md-5 p-0 d-flex justify-content-end">
                 <h5 class="total">$24.00</h5>

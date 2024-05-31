@@ -10,9 +10,8 @@ import { Producto } from '../models/producto';
 })
 export class NavBarComponent {
   
-  isMenuOpen = true;
+  isMenuOpen = false;
   listaDeProductos: Array<Producto> = [];
-  productosEnCarrito: number = this.listaDeProductos.length;
 
   constructor(
     private carritoServise: CarritoService,
