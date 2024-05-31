@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from '../models/producto';
 import { ProductoService } from '../services/producto.service';
 import { switchMap } from 'rxjs/operators';
+import { CarritoService } from '../services/carrito.service';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class ProductoDetallesComponent {
   constructor(
     private route: ActivatedRoute,
     private productoServise: ProductoService,
+    private carritoService: CarritoService,
     private enrutador: Router){}
 
   ngOnInit(){
@@ -35,6 +37,12 @@ export class ProductoDetallesComponent {
       })
     )
   }  
+
+  agregarProducto(){
+    this.carritoService.agregarProductoALaLista(this.producto);
+    console.log(this.carritoService.listaProductos);
+    
+  }
 
   zoom(){ //metodo para mostrar la imagen del producto en grande
     console.log("hola");

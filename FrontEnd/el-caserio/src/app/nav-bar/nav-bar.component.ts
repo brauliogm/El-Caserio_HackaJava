@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Directive, ElementRef, Output, EventEmitter, HostListener } from '@angular/core';
+import { CarritoService } from '../services/carrito.service';
+import { Producto } from '../models/producto';
   
 
 @Component({
@@ -9,9 +10,17 @@ import { Directive, ElementRef, Output, EventEmitter, HostListener } from '@angu
 })
 export class NavBarComponent {
   
-  isMenuOpen = false;
+  isMenuOpen = true;
+  listaDeProductos: Array<Producto> = [];
+  productosEnCarrito: number = this.listaDeProductos.length;
 
-  constructor(){}
+  constructor(
+    private carritoServise: CarritoService,
+  ){}
+
+  ngOnInit(){
+    this.listaDeProductos = this.carritoServise.listaProductos;
+  }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;

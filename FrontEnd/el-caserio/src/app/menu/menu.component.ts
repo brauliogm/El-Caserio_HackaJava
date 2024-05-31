@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Producto } from '../models/producto';
 import { ProductoService } from '../services/producto.service';
 import { Router } from '@angular/router';
+import { CarritoService } from '../services/carrito.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class MenuComponent {
 
   productos: Producto[];
+  originalProductos: Producto[] = []; // para crear una copia del array
   productosFiltrados: Producto[];
   filtrado: boolean = false;
 
@@ -21,7 +23,7 @@ export class MenuComponent {
   sortOrder: string = ''; // variables para ordenar los productos
 
   // Definir las opciones del grupo de radio
-  options = [
+  categorias = [
     { id: '0', value: 'todos', label: 'Todos' },
     { id: '1', value: 'hamburguesa', label: 'Hamburguesa' },
     { id: '2', value: 'entrantes', label: 'Entrantes' },
@@ -33,10 +35,12 @@ export class MenuComponent {
     { id: '8', value: 'postres', label: 'Postres' },
   ];
   // Variable para almacenar la opción seleccionada
-  selectedOption: string = this.options[0].value;
+  selectedOption: string = this.categorias[0].value;
 
-  constructor(private productoService: ProductoService,
-            private enrutador: Router){}
+  constructor(
+    private productoService: ProductoService,
+    private carritoService: CarritoService,
+    private enrutador: Router){}
 
   ngOnInit(){
     this.obtenerProductos();
@@ -47,8 +51,23 @@ export class MenuComponent {
     this.productoService.obtenerProductosLista().subscribe(
       (datos => {
         this.productos = datos;
+        this.originalProductos = [...datos]; // con los [...] de crea una copia para no afectar al array original
       })
     );
+  }
+
+  agregarProducto(id: number){
+    let productoParaAgregar: Producto;
+
+    this.productoService.obtenerProductoPorId(id).subscribe(
+      (datos=> {
+        productoParaAgregar = datos;
+        this.carritoService.agregarProductoALaLista(productoParaAgregar);
+      })
+    )
+    
+    console.log(this.carritoService.listaProductos);
+    
   }
 
   cantidadCategoria(categoria: string): number{
@@ -80,7 +99,17 @@ export class MenuComponent {
   onSortOrderChange(event: Event) {
     const selectElement = event.target as HTMLSelectElement;
     this.sortOrder = selectElement.value;
+
+    if (this.sortOrder === '') {
+      // Si se selecciona "Default", restablecer el array de productos al original
+      this.productos = [...this.originalProductos];
+      
+      // Para manejar el array de los filtrados
+      this.filtrado = false;
+      this.selectedOption = this.categorias[0].value;
+    }
   }
+
   onPageSize(event: Event) {
     const selectElement = event.target as HTMLSelectElement;
     this.pageSize = parseInt(selectElement.value);

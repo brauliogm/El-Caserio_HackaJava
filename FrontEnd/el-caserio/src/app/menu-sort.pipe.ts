@@ -6,7 +6,7 @@ import { Producto } from './models/producto';
   })
   export class MenuSortPipe implements PipeTransform {
     transform(productos: Producto[], order: string): Producto[] {
-      if (!productos || !order) {
+      if (!productos || order === '') {
         return productos;
       }
   

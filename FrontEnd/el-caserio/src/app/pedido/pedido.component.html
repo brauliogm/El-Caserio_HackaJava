@@ -36,51 +36,16 @@
                     <div class="col-md-12 my-4">
                         <div class="">
                             <div class="px-4 py-1">
-            
-                                <!--Producto-->
-                                <div class="row">
-                                    <div class="col-3">
-                                        <img src="../../assets/burger.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="col-9 px-0 alineado">
-                                        <div class="row mb-3 col-12 ">
-                                            <div class="col-9">
-                                                <h5 class="parrafo">Burger premium</h5>
-                                            </div>
-                                            <div class="col-3 p-0 d-flex justify-content-end">
-                                                <button type="button" class="btn btn-danger tamanio-boton">Del</button>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row pe-0 col-12">
-                                            <div class="row col-6 d-flex align-items-start">
-                                                <div class="col-2 d-flex gap-1">
-                                                    <button type="button" class="btn btn-secondary tamanio-boton">-</button>
-                                                    <button type="button" class="btn btn-light" style="pointer-events: none;">1</button>
-                                                    <button type="button" class="btn btn-secondary tamanio-boton">+</button>
-                                                </div>
-                                                <div class="col-2">
-                                                </div>
-                                                <div class="col-2">
-                                                </div>
-                                            </div>
-                                            <div class="col-6 d-flex p-0 ms-4 justify-content-end align-items-end">
-                                                <h5 class="p-0">$12.00</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr class="mt-3 mb-1">
-                                </div>
                                 
                                 <!--Producto-->
-                                <div class="row">
+                                <div class="row" *ngFor="let producto of listaDeProductos">
                                     <div class="col-3">
                                         <img src="../../assets/burger.png" class="d-block w-100" alt="...">
                                     </div>
                                     <div class="col-9 px-0 alineado">
                                         <div class="row mb-3 col-12 ">
                                             <div class="col-9">
-                                                <h5 class="parrafo">Burger premium</h5>
+                                                <h5 class="parrafo">{{producto.nombre}}</h5>
                                             </div>
                                             <div class="col-3 p-0 d-flex justify-content-end">
                                                 <button type="button" class="btn btn-danger tamanio-boton">Del</button>
@@ -100,7 +65,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-6 d-flex p-0 ms-4 justify-content-end align-items-end">
-                                                <h5 class="p-0">$12.00</h5>
+                                                <h5 class="p-0">{{producto.precio}}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -292,7 +257,7 @@
                     <div class="row d-flex justify-content-between my-4">
                         <p class="inline">Productos</p>
                         <h5 class="inline">
-                            <span class="badge text-bg-secondary rounded-pill">2</span>
+                            <span class="badge text-bg-secondary rounded-pill">{{listaDeProductos.length}}</span>
                         </h5>
                     </div>
     

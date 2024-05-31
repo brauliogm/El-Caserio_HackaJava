@@ -18,7 +18,7 @@ public class CarritoController {
         return iCarritoService.verCarrito(idCarrito);
     }
 
-    @PostMapping("/crearCarrito")
+    @PostMapping()
     public Carrito crearCarrito(@RequestBody Carrito carrito) {
         iCarritoService.crearCarrito(carrito);
         return carrito;

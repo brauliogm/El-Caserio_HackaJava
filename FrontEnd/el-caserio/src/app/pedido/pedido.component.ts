@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Producto } from '../models/producto';
+import { CarritoService } from '../services/carrito.service';
 
 @Component({
   selector: 'app-pedido',
@@ -8,10 +10,14 @@ import { Component } from '@angular/core';
 export class PedidoComponent {
 
   marcador: number = 1;
+  listaDeProductos: Array<Producto> = [];
 
-  constructor(){}
+  constructor(
+    private carritoServise: CarritoService,
+  ){}
 
-  ngInit(){
+  ngOnInit(){
+    this.listaDeProductos = this.carritoServise.listaProductos;
   }
 
   sumarMarcador(){

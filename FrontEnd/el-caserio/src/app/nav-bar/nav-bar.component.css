@@ -10,6 +10,7 @@
 
 .carrito{
     width: 400px;
+    max-height: 80vh;
     position: absolute;
     margin-top: 19px;
     margin-left: -350px;
