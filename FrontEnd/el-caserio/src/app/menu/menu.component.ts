@@ -62,6 +62,7 @@ export class MenuComponent {
     this.productoService.obtenerProductoPorId(id).subscribe(
       (datos=> {
         productoParaAgregar = datos;
+        productoParaAgregar.cantidadRequeridaDelProducto = 1;
         this.carritoService.agregarProductoALaLista(productoParaAgregar);
       })
     )

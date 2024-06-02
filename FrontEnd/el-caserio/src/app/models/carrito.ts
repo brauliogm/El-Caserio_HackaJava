@@ -5,4 +5,5 @@ export class Carrito{
     id : number;
     productos : Array<Producto>;
     cliente : Cliente;
+    totalDelCarrito : number;
 }

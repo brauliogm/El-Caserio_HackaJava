@@ -48,7 +48,7 @@
                                                 <h5 class="parrafo">{{producto.nombre}}</h5>
                                             </div>
                                             <div class="col-3 p-0 d-flex justify-content-end">
-                                                <button type="button" class="btn btn-danger tamanio-boton">Del</button>
+                                                <button type="button" class="btn btn-danger tamanio-boton" (click)="eliminarProducto(producto)">Del</button>
                                             </div>
                                         </div>
                                         
@@ -56,7 +56,7 @@
                                             <div class="row col-6 d-flex align-items-start">
                                                 <div class="col-2 d-flex gap-1">
                                                     <button type="button" class="btn btn-secondary tamanio-boton">-</button>
-                                                    <button type="button" class="btn btn-light" style="pointer-events: none;">1</button>
+                                                    <button type="button" class="btn btn-light" style="pointer-events: none;">{{producto.cantidadRequeridaDelProducto}}</button>
                                                     <button type="button" class="btn btn-secondary tamanio-boton">+</button>
                                                 </div>
                                                 <div class="col-2">
@@ -65,7 +65,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-6 d-flex p-0 ms-4 justify-content-end align-items-end">
-                                                <h5 class="p-0">{{producto.precio}}</h5>
+                                                <h5 class="p-0">{{producto.precio * producto.cantidadRequeridaDelProducto}}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -263,7 +263,7 @@
     
                     <div class="row d-flex justify-content-between my-4">
                         <h5 class="inline">Importe Total</h5>
-                        <h5 class="inline">$24.00</h5>
+                        <h5 class="inline">{{totalCarrito()}}</h5>
                     </div>
     
                     <p class="text-center p-3 border" *ngIf="marcador == 3">(Revise sus datos antes de realizar su pedido)</p>

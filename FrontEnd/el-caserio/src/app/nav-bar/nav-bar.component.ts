@@ -23,12 +23,18 @@ export class NavBarComponent {
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
-    console.log('Toggle menu:', this.isMenuOpen);
   }
 
   closeMenu(): void {
     this.isMenuOpen = false;
-    console.log('Close menu');
+  }
+
+  totalCarrito():number {
+    return this.carritoServise.totalCarrito();
+  }
+
+  eliminarProducto(product: Producto){
+    this.carritoServise.eliminarProductoDeLaLista(product);
   }
 
 }

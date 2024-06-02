@@ -8,4 +8,11 @@ export class Producto{
     descripcion : string;
     listaAlergenos : Array<Alergeno>;
     precio : number;
+    cantidadRequeridaDelProducto : number;
+    
+    // public set cantidadRequerida(cantidad: number) {
+    //     this.cantidadRequeridaDelProducto = cantidad;
+    // }
 }
+
+

@@ -28,11 +28,19 @@ export class PedidoComponent {
     this.marcador--;
   }
 
-  confirmarPedido(){
-
-  }
-
   ventanaDatos(){
     this.marcador = 2;
+  }
+
+  eliminarProducto(product: Producto){
+    this.carritoServise.eliminarProductoDeLaLista(product);
+  }
+
+  totalCarrito():number {
+    return this.carritoServise.totalCarrito();
+  }
+
+  confirmarPedido(){
+
   }
 }

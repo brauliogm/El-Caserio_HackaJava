@@ -20,11 +20,12 @@ public class Producto {
     @ManyToMany
     private List<Alergeno> listaAlergenos;
     private double precio;
+    private int cantidadRequeridaDelProducto;
 
     public Producto() {
     }
 
-    public Producto(Long id, String nombre, String categoria, String subcategoria, String descripcion, List<Alergeno> listaAlergenos, double precio) {
+    public Producto(Long id, String nombre, String categoria, String subcategoria, String descripcion, List<Alergeno> listaAlergenos, double precio, int cantidadRequeridaDelProducto) {
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -32,6 +33,7 @@ public class Producto {
         this.descripcion = descripcion;
         this.listaAlergenos = listaAlergenos;
         this.precio = precio;
+        this.cantidadRequeridaDelProducto = cantidadRequeridaDelProducto;
     }
 
     @Override

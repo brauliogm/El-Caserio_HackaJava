@@ -8,6 +8,10 @@
     flex-direction: row;
 }
 
+.enlace{
+    text-decoration: none;
+}
+
 .carrito{
     width: 400px;
     max-height: 80vh;

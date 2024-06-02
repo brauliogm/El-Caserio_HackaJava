@@ -37,6 +37,11 @@
         </a>
         <div class="capa" (click)="toggleMenu()" *ngIf="isMenuOpen"></div>
         <ul class="carrito" *ngIf="isMenuOpen" (mouseleave)="closeMenu()">
+
+          <div class="text-center mb-4 mt-3" *ngIf="listaDeProductos.length == 0">
+            <h4>Carrito vacio</h4>
+            <h5>Agregue productos en el <a class="enlace" routerLink="/menu" routerLinkActive="active">menu</a></h5>
+          </div>
           
           <!-- producto -->
           <li class="px-3 py-1" *ngFor="let producto of listaDeProductos">
@@ -50,20 +55,20 @@
                     <p class="parrafo">{{producto.nombre}}</p>
                   </div>
                   <div class="col-3 p-0 d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger tamanio-boton">Del</button>
+                    <button type="button" class="btn btn-danger tamanio-boton" (click)="eliminarProducto(producto)">Del</button>
                   </div>
                 </div>
                 <div class="row pe-0">
                   <div class="row col-7 d-flex justify-content-between align-items-start">
                     <div class="col-2 d-flex gap-1">
                       <button type="button" class="btn btn-secondary tamanio-boton">-</button>
-                      <button type="button" class="btn btn-light" style="pointer-events: none;">1</button>
+                      <button type="button" class="btn btn-light" style="pointer-events: none;">{{producto.cantidadRequeridaDelProducto}}</button>
                       <button type="button" class="btn btn-secondary tamanio-boton">+</button>
                     </div>
                     
                   </div>
                   <div class="col-5 d-flex p-0 ms-4 justify-content-end align-items-end">
-                    <h6 class="p-0">{{producto.precio}}</h6>
+                    <h6 class="p-0">{{producto.precio * producto.cantidadRequeridaDelProducto}}</h6>
                   </div>
                 </div>
               </div>
@@ -72,13 +77,13 @@
           </li>          
           
           <!--<li><hr class="dropdown-divider"></li> -->
-          <li class="px-3 py-1 mb-1">
+          <li class="px-3 py-1 mb-1" *ngIf="listaDeProductos.length != 0">
             <div class="row col-md-12 p-0">
               <div class="col-md-7">
                 <h5>Subtotal del carrito :</h5>
               </div>
               <div class="col-md-5 p-0 d-flex justify-content-end">
-                <h5 class="total">$24.00</h5>
+                <h5 class="total">{{totalCarrito()}}</h5>
               </div>
             </div>
           </li>

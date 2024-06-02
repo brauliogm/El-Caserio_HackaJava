@@ -18,7 +18,45 @@ export class CarritoService {
   }
 
   agregarProductoALaLista(producto: Producto){
-    this.listaProductos.push(producto);
+    let repetido: boolean = false;
+
+    if (this.listaProductos.length == 0) {
+      this.listaProductos.push(producto);
+      console.log("pad");      
+    } else {
+
+      for (const product of this.listaProductos) {
+        if (product.id == producto.id) {
+            repetido = true;
+            console.log("hay repetido");            
+        }
+      }
+
+      if (repetido) {
+        console.log("se modifica el repetido");
+        
+      } else {
+        this.listaProductos.push(producto);
+        console.log("es nuevo");
+      }
+    }
+  }
+
+  eliminarProductoDeLaLista(producto: Producto){
+    const index = this.listaProductos.indexOf(producto);
+    if (index !== -1) {
+        this.listaProductos.splice(index, 1);
+    }
+  }
+
+  totalCarrito():number {
+    let total: number = 0;
+    
+    this.listaProductos.forEach(producto => {
+      total += producto.precio * producto.cantidadRequeridaDelProducto;
+    });
+
+    return parseFloat(total.toFixed(2));
   }
 
   crearCarrito(carrito: Carrito){
