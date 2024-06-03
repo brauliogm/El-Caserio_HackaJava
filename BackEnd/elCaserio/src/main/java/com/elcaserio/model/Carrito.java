@@ -24,6 +24,12 @@ public class Carrito {
     public Carrito() {
     }
 
+    public Carrito(Long id, List<Producto> productos, double totalDelCarrito) {
+        this.id = id;
+        this.productos = productos;
+        this.totalDelCarrito = totalDelCarrito;
+    }
+
     public Carrito(Long id, List<Producto> productos, Cliente cliente, double totalDelCarrito) {
         this.id = id;
         this.productos = productos;

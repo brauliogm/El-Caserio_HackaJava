@@ -24,6 +24,11 @@ public class CarritoController {
         return carrito;
     }
 
+    @PutMapping("/{id}")
+    public void modificarListaDelCarrito(@RequestBody Carrito carrito, @PathVariable Long idCarrito) {
+        iCarritoService.modificarProductos(carrito, idCarrito);
+    }
+
     @DeleteMapping("/{id}")
     public String vaciarCarrito(@PathVariable Long idCarrito) {
         iCarritoService.vaciarCarrito(idCarrito);

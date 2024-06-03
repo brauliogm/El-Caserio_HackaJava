@@ -1,5 +1,6 @@
 package com.elcaserio.service;
 
+import com.elcaserio.exepcion.RecursoNoEncontradoExcepcion;
 import com.elcaserio.model.Carrito;
 import com.elcaserio.repository.ICarritoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,18 @@ public class CarritoService implements ICarritoService {
     public void vaciarCarrito(Long idCarrito) {
         iCarritoRepo.deleteById(idCarrito);
     }
+
+    //METODO PARA MODIFICAR LOS PRODUCTOS DEL CARRITO
+    @Override
+    public void modificarProductos(Carrito carritoRecibido, long id) {
+        Carrito carrito = this.verCarrito(id);
+        if (carrito == null)
+            throw new RecursoNoEncontradoExcepcion("No se encontro el id: " + id);
+        carrito.setProductos(carritoRecibido.getProductos());
+        carrito.setTotalDelCarrito(carritoRecibido.getTotalDelCarrito());
+
+        iCarritoRepo.save(carrito);
+    }
+
 
 }
