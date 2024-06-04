@@ -46,22 +46,9 @@ export class ProductoDetallesComponent {
   agregarProducto(){
     this.producto.cantidadRequeridaDelProducto = this.cantidadProductosSolicitados;
 
-    this.carritoService.agregarProductoALaLista(this.producto);
-    
-    // this.carritoService.listaProductos.forEach(product => {
-    //   if (product.id === this.productoParaAgregar.id) {
-
-    //     console.log("lola");
-        
-    //     // this.productoParaAgregar.cantidadRequeridaDelProducto += this.cantidadProductosSolicitados;
-        
-    //   } else {
-    //     console.log("loka");
-    //   }
-    // });
+    this.carritoService.armadoDelCarrito(this.producto);
 
     console.log(this.carritoService.listaProductos);
-    
   }
 
   zoom(){ //metodo para mostrar la imagen del producto en grande

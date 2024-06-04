@@ -63,12 +63,9 @@ export class MenuComponent {
       (datos=> {
         productoParaAgregar = datos;
         productoParaAgregar.cantidadRequeridaDelProducto = 1;
-        this.carritoService.agregarProductoALaLista(productoParaAgregar);
+        this.carritoService.armadoDelCarrito(productoParaAgregar);
       })
     )
-    
-    console.log(this.carritoService.listaProductos);
-    
   }
 
   cantidadCategoria(categoria: string): number{

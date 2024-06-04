@@ -32,7 +32,7 @@ public class CarritoService implements ICarritoService {
 
     //METODO PARA MODIFICAR LOS PRODUCTOS DEL CARRITO
     @Override
-    public void modificarProductos(Carrito carritoRecibido, long id) {
+    public Carrito modificarProductos(Carrito carritoRecibido, Long id) {
         Carrito carrito = this.verCarrito(id);
         if (carrito == null)
             throw new RecursoNoEncontradoExcepcion("No se encontro el id: " + id);
@@ -40,6 +40,7 @@ public class CarritoService implements ICarritoService {
         carrito.setTotalDelCarrito(carritoRecibido.getTotalDelCarrito());
 
         iCarritoRepo.save(carrito);
+        return carrito;
     }
 
 

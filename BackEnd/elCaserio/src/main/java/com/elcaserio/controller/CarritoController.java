@@ -14,8 +14,8 @@ public class CarritoController {
     ICarritoService iCarritoService;
 
     @GetMapping("/{id}")
-    public Carrito verCarrito(@PathVariable Long idCarrito) {
-        return iCarritoService.verCarrito(idCarrito);
+    public Carrito verCarrito(@PathVariable Long id) {
+        return iCarritoService.verCarrito(id);
     }
 
     @PostMapping()
@@ -25,8 +25,8 @@ public class CarritoController {
     }
 
     @PutMapping("/{id}")
-    public void modificarListaDelCarrito(@RequestBody Carrito carrito, @PathVariable Long idCarrito) {
-        iCarritoService.modificarProductos(carrito, idCarrito);
+    public Carrito modificarListaDelCarrito(@RequestBody Carrito carrito, @PathVariable Long id) {
+        return iCarritoService.modificarProductos(carrito, id);
     }
 
     @DeleteMapping("/{id}")

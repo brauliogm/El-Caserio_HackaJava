@@ -10,6 +10,6 @@ public interface ICarritoService {
 
     public void vaciarCarrito(Long idCarrito);
 
-    public void modificarProductos(Carrito carritoRecibido, long id);
+    public Carrito modificarProductos(Carrito carritoRecibido, Long id);
 
 }
