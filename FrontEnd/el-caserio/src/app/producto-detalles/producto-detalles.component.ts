@@ -15,7 +15,6 @@ export class ProductoDetallesComponent {
   producto: Producto;
   productoId: number;
   cantidadProductosSolicitados: number = 1;
-  private productoParaAgregar: Producto = new Producto();
 
   constructor(
     private route: ActivatedRoute,
@@ -44,7 +43,10 @@ export class ProductoDetallesComponent {
   }
 
   agregarProducto(){
-    this.producto.cantidadRequeridaDelProducto = this.cantidadProductosSolicitados;
+    console.log(this.producto.cantidadRequeridaDelProducto);
+    this.producto.cantidadRequeridaDelProducto += this.cantidadProductosSolicitados;
+
+    console.log("cantidad" + this.cantidadProductosSolicitados);   
 
     this.carritoService.armadoDelCarrito(this.producto);
 

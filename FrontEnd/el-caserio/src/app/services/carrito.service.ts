@@ -15,35 +15,35 @@ export class CarritoService {
 
   constructor(private clientHttp: HttpClient) { }
 
-  armadoDelCarrito(producto: Producto){
+  armadoDelCarrito(productoRecibido: Producto){
     let repetido: boolean = false;
 
     if (this.listaProductos.length == 0) {
       
       console.log("lista en 0");
       
-      this.agregarProductoALaLista(producto);
+      this.agregarProductoALaLista(productoRecibido);
    
     } else {
 
       console.log("lista con mas de un producto");
       
 
-      for (const product of this.carrito.productos) {
-        if (product.id == producto.id) {
+      for (const product of this.listaProductos) {
+        if (product.id == productoRecibido.id) {
             repetido = true;
             console.log("hay repetido");            
         }
       }
 
       if (repetido) {
-        console.log("se modifica el repetido");
+        console.log("se modificara el repetido");
         
-        this.editarProducto(producto);
+        this.editarProducto(productoRecibido);
                 
       } else {
-        console.log("es nuevo");
-        this.agregarProductoALaLista(producto);
+        console.log("es diferente a los que ya estaban");
+        this.agregarProductoALaLista(productoRecibido);
       }
     }
     console.log(this.listaProductos.length);
@@ -54,52 +54,30 @@ export class CarritoService {
     this.listaProductos.push(producto);
       this.carrito.productos = this.listaProductos;
       this.carrito.totalDelCarrito = this.totalCarrito();
-
-      this.crearCarrito(this.carrito).subscribe(
-        {
-          next: (datos) => {
-            this.carrito = datos;
-            this.listaProductos = datos.productos;
-            console.log("Se agrego el carrito con el id: " + this.carrito.id);            
-          },
-          error: (error: any) => {console.log(error);
-          }
-        }
-      );
   }
 
-  editarProducto(product: Producto){
+  editarProducto(productoRecibido: Producto){
 
-    let productosExistentes: Array<Producto> = new Array<Producto>;
+    let index: number = 0
 
-    this.obtenerCarritoPorId(this.carrito.id).subscribe(
-      {
-        next: (datos) => {
-          productosExistentes = datos.productos;
-          this.listaProductos = datos.productos;
-        }
-        ,
-        error: (error: any) => console.log(error)
+    this.listaProductos.forEach(producto => {
+      if(producto.id === productoRecibido.id){
+        index = this.listaProductos.indexOf(producto);
       }
-    );
+    })
 
-    productosExistentes.forEach(productoEnCarrito => {
-      if (productoEnCarrito.id == product.id) {
-        productoEnCarrito.cantidadRequeridaDelProducto += product.cantidadRequeridaDelProducto;
-      }
-    });
 
-    this.carrito.productos = productosExistentes;
-    this.carrito.totalDelCarrito = this.totalCarrito();
-
-    this.modificarCarrito(this.carrito, this.carrito.id).subscribe(
-      {
-        next: (datos) => {
-          console.log("carrito modificado");
-          this.listaProductos = datos.productos;
-        }
-      }
-    )
+    console.log(index);
+    
+    if (index !== -1) {
+      console.log("ola");
+      
+        this.listaProductos[index].cantidadRequeridaDelProducto += productoRecibido.cantidadRequeridaDelProducto;
+        console.log(productoRecibido.cantidadRequeridaDelProducto);
+        console.log(this.listaProductos[index].cantidadRequeridaDelProducto);
+        
+        
+    }
     
   }
 
@@ -113,7 +91,7 @@ export class CarritoService {
   totalCarrito():number {
     let total: number = 0;
     
-    this.carrito.productos.forEach(producto => {
+    this.listaProductos.forEach(producto => {
       total += producto.precio * producto.cantidadRequeridaDelProducto;
     });
 

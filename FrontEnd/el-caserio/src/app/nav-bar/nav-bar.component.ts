@@ -29,6 +29,14 @@ export class NavBarComponent {
     this.isMenuOpen = false;
   }
 
+  sumarProducto(){
+
+  }
+
+  restarProducto(){
+    
+  }
+
   totalCarrito():number {
     return this.carritoServise.totalCarrito();
   }
