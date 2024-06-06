@@ -32,6 +32,14 @@ export class PedidoComponent {
     this.marcador = 2;
   }
 
+  sumarProducto(id: number){
+    this.carritoServise.sumarProducto(id)
+  }
+
+  restarProducto(id: number, producto: Producto){
+    this.carritoServise.restarProducto(id, producto)
+  }
+
   eliminarProducto(product: Producto){
     this.carritoServise.eliminarProductoDeLaLista(product);
   }

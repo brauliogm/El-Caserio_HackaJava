@@ -29,12 +29,12 @@ export class NavBarComponent {
     this.isMenuOpen = false;
   }
 
-  sumarProducto(){
-
+  sumarProducto(id: number){
+    this.carritoServise.sumarProducto(id)
   }
 
-  restarProducto(){
-    
+  restarProducto(id: number, producto: Producto){
+    this.carritoServise.restarProducto(id, producto)
   }
 
   totalCarrito():number {

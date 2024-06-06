@@ -20,7 +20,7 @@ export class ProductoDetallesComponent {
     private route: ActivatedRoute,
     private productoServise: ProductoService,
     private carritoService: CarritoService,
-    private enrutador: Router
+    private productoService: ProductoService,
   ){}
 
   ngOnInit(){
@@ -42,15 +42,16 @@ export class ProductoDetallesComponent {
     return this.cantidadProductosSolicitados = parseInt(selectElement.value);
   }
 
-  agregarProducto(){
-    console.log(this.producto.cantidadRequeridaDelProducto);
-    this.producto.cantidadRequeridaDelProducto += this.cantidadProductosSolicitados;
+  agregarProducto(id: number){
+    let productoParaAgregar: Producto;
 
-    console.log("cantidad" + this.cantidadProductosSolicitados);   
-
-    this.carritoService.armadoDelCarrito(this.producto);
-
-    console.log(this.carritoService.listaProductos);
+    this.productoService.obtenerProductoPorId(id).subscribe(
+      (datos=> {
+        productoParaAgregar = datos;
+        productoParaAgregar.cantidadRequeridaDelProducto = this.cantidadProductosSolicitados;
+        this.carritoService.armadoDelCarrito(productoParaAgregar);
+      })
+    )
   }
 
   zoom(){ //metodo para mostrar la imagen del producto en grande
