@@ -36,6 +36,11 @@
                     <div class="col-md-12 my-4">
                         <div class="">
                             <div class="px-4 py-1">
+
+                                <div class="text-center my-4" *ngIf="listaDeProductos.length == 0">
+                                    <h4>Carrito vacio</h4>
+                                    <h5>Agregue productos en el <a class="enlace" routerLink="/menu" routerLinkActive="active">menu</a></h5>
+                                  </div>
                                 
                                 <!--Producto-->
                                 <div class="row" *ngFor="let producto of listaDeProductos">
@@ -99,39 +104,39 @@
                     <div class="col-md-12 mt-4">
                         <h5>Ingrese los datos de entrega</h5>
                         <div><hr class="my-3"></div>
-                        <form class="row g-3">
+                        <form class="row g-3" (submit)="pruebe()" ngNativeValidate>
                             <div class="col-md-6">
                                 <label for="inputNombre" class="form-label">Nombre(s)</label>
-                                <input id="inputNombre" type="text" class="form-control" placeholder="" aria-label="Nombre">
+                                <input id="inputNombre" [(ngModel)]="cliente.nombre" name="nombre" required minlength="2" type="text" class="form-control" placeholder="" aria-label="Nombre">
                             </div>
                             <div class="col-md-6">
                                 <label for="inputApellido" class="form-label">Apellido(s)</label>
-                                <input id="inputApellido" type="text" class="form-control" placeholder="" aria-label="Apellido">
+                                <input id="inputApellido" [(ngModel)]="cliente.apellido" name="apellido" required minlength="2" type="text" class="form-control" placeholder="" aria-label="Apellido">
                             </div>
                             <div class="col-md-6">
                                 <label for="inputTelefono" class="form-label">Telefono</label>
-                                <input id="inputTelefono" type="text" class="form-control" placeholder="000-000-0000" aria-label="Telefono">
+                                <input id="inputTelefono" [(ngModel)]="cliente.telefono" name="telefono" required minlength="2" type="text" class="form-control" placeholder="000-000-0000" aria-label="Telefono">
                             </div>
                             <div class="col-md-6">
                                 <label for="inputEmail4" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="correo@correo.com">
+                                <input type="email" [(ngModel)]="cliente.email" name="email" required minlength="7" class="form-control" id="inputEmail4" placeholder="correo@correo.com">
                             </div>
                             <hr class="my-4">
                             <div class="col-12 mt-0">
                                 <label for="inputCalleNum" class="form-label">Calle y numero del domicilio</label>
-                                <input type="text" class="form-control" id="inputCalleNum" placeholder="">
+                                <input type="text" [(ngModel)]="direccion.calle" name="calle" required minlength="2" class="form-control" id="inputCalleNum" placeholder="">
                             </div>
                             <div class="col-md-2">
                                 <label for="inputCP" class="form-label">Codigo Postal</label>
-                                <input type="text" class="form-control" id="inputCP">
+                                <input type="text" [(ngModel)]="direccion.codigoPostal" name="codigoPostal" minlength="2" class="form-control" id="inputCP">
                             </div>
                             <div class="col-5">
                                 <label for="inputLocalidad" class="form-label">Localidad</label>
-                                <input type="text" class="form-control" id="inputLocalidad" placeholder="">
+                                <input type="text" [(ngModel)]="direccion.localidad" name="localidad" minlength="2" class="form-control" id="inputLocalidad" placeholder="">
                             </div>
                             <div class="col-md-5">
                                 <label for="inputProvincia" class="form-label">Provincia</label>
-                                <input type="text" class="form-control" id="inputProvincia">
+                                <input type="text" [(ngModel)]="direccion.provincia" name="provicia" required minlength="2" class="form-control" id="inputProvincia">
                             </div>
                             <!--<div class="col-md-4">
                             <label for="inputState" class="form-label">State</label>
@@ -151,6 +156,7 @@
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">Sign in</button>
                             </div>-->
+                        <button class="btn btn-primary" type="submit">prueba</button>
                         </form>
                     </div>
                 </div>
@@ -189,7 +195,7 @@
                                                 <h5 class="text-center">1</h5>                                                   
                                             </div>
                                             <div class="col-2 ps-0">
-                                                <h5 class="text-end">$12.00</h5>
+                                                <h5 class="text-end">€ 12.00</h5>
                                             </div>
                                             <div>
                                                 <hr class="mt-2 mb-1">
@@ -257,13 +263,13 @@
                     <div class="row d-flex justify-content-between my-4">
                         <p class="inline">Productos</p>
                         <h5 class="inline">
-                            <span class="badge text-bg-secondary rounded-pill">{{listaDeProductos.length}}</span>
+                            <span class="badge text-bg-secondary rounded-pill">{{totalElementosCarrito()}}</span>
                         </h5>
                     </div>
     
                     <div class="row d-flex justify-content-between my-4">
                         <h5 class="inline">Importe Total</h5>
-                        <h5 class="inline">{{totalCarrito()}}</h5>
+                        <h5 class="inline">€ {{totalCarrito()}}</h5>
                     </div>
     
                     <p class="text-center p-3 border" *ngIf="marcador == 3">(Revise sus datos antes de realizar su pedido)</p>

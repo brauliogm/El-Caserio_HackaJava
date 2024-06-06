@@ -41,6 +41,10 @@ export class NavBarComponent {
     return this.carritoServise.totalCarrito();
   }
 
+  totalElementosCarrito():number {
+    return this.carritoServise.totalElementosCarrito();
+  }
+
   eliminarProducto(product: Producto){
     this.carritoServise.eliminarProductoDeLaLista(product);
   }

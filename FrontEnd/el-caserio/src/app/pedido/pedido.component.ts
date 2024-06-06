@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Producto } from '../models/producto';
 import { CarritoService } from '../services/carrito.service';
+import { Cliente } from '../models/cliente';
+import { DireccionCliente } from '../models/direccionCliente';
 
 @Component({
   selector: 'app-pedido',
@@ -9,8 +11,10 @@ import { CarritoService } from '../services/carrito.service';
 })
 export class PedidoComponent {
 
-  marcador: number = 1;
+  marcador: number = 2;
   listaDeProductos: Array<Producto> = [];
+  cliente: Cliente = new Cliente();
+  direccion: DireccionCliente = new DireccionCliente();
 
   constructor(
     private carritoServise: CarritoService,
@@ -18,6 +22,12 @@ export class PedidoComponent {
 
   ngOnInit(){
     this.listaDeProductos = this.carritoServise.listaProductos;
+    this.cliente.direccionCliente = this.direccion;
+  }
+
+  pruebe(){
+    console.log(this.cliente);
+    
   }
 
   sumarMarcador(){
@@ -46,6 +56,10 @@ export class PedidoComponent {
 
   totalCarrito():number {
     return this.carritoServise.totalCarrito();
+  }
+
+  totalElementosCarrito():number {
+    return this.carritoServise.totalElementosCarrito();
   }
 
   confirmarPedido(){

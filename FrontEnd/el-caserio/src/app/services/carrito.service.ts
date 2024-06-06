@@ -103,6 +103,16 @@ export class CarritoService {
     return parseFloat(total.toFixed(2));
   }
 
+  totalElementosCarrito(): number{
+    let totalElementos: number = 0;
+
+    this.listaProductos.forEach(elemento => {
+      totalElementos += elemento.cantidadRequeridaDelProducto;
+    })
+
+    return totalElementos;
+  }
+
   armarCarrito(){
     let carrito: Carrito = new Carrito();
 
