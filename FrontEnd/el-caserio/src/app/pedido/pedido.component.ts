@@ -15,6 +15,7 @@ export class PedidoComponent {
   listaDeProductos: Array<Producto> = [];
   cliente: Cliente = new Cliente();
   direccion: DireccionCliente = new DireccionCliente();
+  validado: boolean = false;
 
   constructor(
     private carritoServise: CarritoService,
@@ -60,6 +61,18 @@ export class PedidoComponent {
 
   totalElementosCarrito():number {
     return this.carritoServise.totalElementosCarrito();
+  }
+
+  validarForm(){
+    this.sumarMarcador();
+    this.validado = false;
+  }
+  
+  onSubmit() {
+    console.log('Formulario enviado:');
+    
+    console.log(this.cliente);
+    this.validado = true;
   }
 
   confirmarPedido(){
