@@ -31,7 +31,7 @@
 
     <!-- car -->
     <div class="col-md-4 d-flex justify-content-end">
-      <div class="nav-item dropdown" >
+      <div class="nav-item dropdown" *ngIf="rutaActual != '/pedido'">
         <a (mouseenter)="toggleMenu()" class="nav-link dropdown-toggle car-button" role="button" aria-expanded="false">
           Car <span class="badge text-bg-secondary rounded-pill" *ngIf="listaDeProductos.length != 0">{{totalElementosCarrito()}}</span>
         </a>

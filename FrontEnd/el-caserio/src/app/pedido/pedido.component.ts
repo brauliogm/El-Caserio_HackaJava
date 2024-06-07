@@ -11,7 +11,7 @@ import { DireccionCliente } from '../models/direccionCliente';
 })
 export class PedidoComponent {
 
-  marcador: number = 2;
+  marcador: number = 1;
   listaDeProductos: Array<Producto> = [];
   cliente: Cliente = new Cliente();
   direccion: DireccionCliente = new DireccionCliente();

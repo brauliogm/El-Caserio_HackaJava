@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CarritoService } from '../services/carrito.service';
 import { Producto } from '../models/producto';
+import { NavigationEnd, Router } from '@angular/router';
   
 
 @Component({
@@ -12,13 +13,21 @@ export class NavBarComponent {
   
   isMenuOpen = false;
   listaDeProductos: Array<Producto> = [];
+  rutaActual: string;
 
   constructor(
     private carritoServise: CarritoService,
+    private router: Router,
   ){}
 
   ngOnInit(){
     this.listaDeProductos = this.carritoServise.listaProductos;
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.rutaActual = event.urlAfterRedirects;
+        console.log('Current URL:', this.rutaActual);
+      }
+    });
   }
 
   toggleMenu(): void {
