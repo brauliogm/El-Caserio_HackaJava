@@ -59,6 +59,10 @@ export class PedidoComponent {
     return this.carritoServise.totalCarrito();
   }
 
+  dosDecimales(cantidad: number, precio:number):number{
+    return this.carritoServise.dosDecimales(cantidad,precio);
+  }
+
   totalElementosCarrito():number {
     return this.carritoServise.totalElementosCarrito();
   }

@@ -103,6 +103,11 @@ export class CarritoService {
     return parseFloat(total.toFixed(2));
   }
 
+  dosDecimales(cantidad: number, precio:number):number{
+    let total: number = cantidad * precio;
+    return parseFloat(total.toFixed(2));
+  }
+
   totalElementosCarrito(): number{
     let totalElementos: number = 0;
 

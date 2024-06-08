@@ -2,12 +2,10 @@
   <div class="container">
 
     <!-- logo -->
-    <div class="logo col-md-4">
-      <a  routerLink="/inicio" routerLinkActive="active">
-        <svg width="1103" height="996" viewBox="0 0 1103 996" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M410.988 255.56L0 995.337H189.802L505.141 427.427L410.988 255.56ZM1102.94 995.337L647.119 170.373L551.471 0L457.317 170.373L551.471 340.746L711.79 629.718H498.683L405.461 786.972H799.034L914.634 995.337H1102.94Z" fill="#FAFBFC"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M410.988 255.56L0 995.337H189.802L505.141 427.427L410.988 255.56ZM1102.94 995.337L647.119 170.373L551.471 0L457.317 170.373L551.471 340.746L711.79 629.718H498.683L405.461 786.972H799.034L914.634 995.337H1102.94Z" fill="#FAFBFC"/>
-        </svg>
+    <div class="logo col-md-4 d-flex align-items-center">
+      <a class="m-0 d-flex align-items-center" routerLink="/inicio" routerLinkActive="active">
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="#f2ffff" d="M8.5 9q1.15 0 2.338.288t2.2.887t1.737 1.5t.975 2.125q.1.475-.2.837t-.775.363H2.225q-.475 0-.775-.363t-.2-.837q.25-1.225.988-2.125t1.75-1.5t2.187-.888T8.5 9M2 19q-.425 0-.712-.288T1 18t.288-.712T2 17h13q.425 0 .713.288T16 18t-.288.713T15 19zm0 4q-.425 0-.712-.288T1 22t.288-.712T2 21h13q.425 0 .713.288T16 22t-.288.713T15 23zm18.3 0H19q-.425 0-.712-.288T18 22v-7q0-2.7-1.763-4.712t-4.362-2.813q-.275-.075-.45-.287T11.2 6.7l-.075-.575q-.05-.45.25-.787t.75-.338H16V2q0-.425.288-.712T17 1t.713.288T18 2v3h3.9q.45 0 .75.325t.25.775l-1.6 16q-.05.375-.325.638T20.3 23"/></svg>
+        El Cacerio
       </a>
     </div>
 
@@ -33,7 +31,8 @@
     <div class="col-md-4 d-flex justify-content-end">
       <div class="nav-item dropdown" *ngIf="rutaActual != '/pedido'">
         <a (mouseenter)="toggleMenu()" class="nav-link dropdown-toggle car-button" role="button" aria-expanded="false">
-          Car <span class="badge text-bg-secondary rounded-pill" *ngIf="listaDeProductos.length != 0">{{totalElementosCarrito()}}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921"/><circle cx="10.5" cy="19.5" r="1.5" fill="#ffffff"/><circle cx="17.5" cy="19.5" r="1.5" fill="#ffffff"/></svg>
+          <span class="badge text-bg-secondary rounded-pill" *ngIf="listaDeProductos.length != 0">{{totalElementosCarrito()}}</span>
         </a>
         <div class="capa" (click)="toggleMenu()" *ngIf="isMenuOpen"></div>
         <ul class="carrito" *ngIf="isMenuOpen" (mouseleave)="closeMenu()">
@@ -55,20 +54,26 @@
                     <p class="parrafo">{{producto.nombre}}</p>
                   </div>
                   <div class="col-3 p-0 d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger tamanio-boton" (click)="eliminarProducto(producto)">Del</button>
+                    <button type="button" class="btn btn-danger tamanio-boton" (click)="eliminarProducto(producto)">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M20 6a1 1 0 0 1 .117 1.993L20 8h-.081L19 19a3 3 0 0 1-2.824 2.995L16 22H8c-1.598 0-2.904-1.249-2.992-2.75l-.005-.167L4.08 8H4a1 1 0 0 1-.117-1.993L4 6zm-9.489 5.14a1 1 0 0 0-1.218 1.567L10.585 14l-1.292 1.293l-.083.094a1 1 0 0 0 1.497 1.32L12 15.415l1.293 1.292l.094.083a1 1 0 0 0 1.32-1.497L13.415 14l1.292-1.293l.083-.094a1 1 0 0 0-1.497-1.32L12 12.585l-1.293-1.292l-.094-.083zM14 2a2 2 0 0 1 2 2a1 1 0 0 1-1.993.117L14 4h-4l-.007.117A1 1 0 0 1 8 4a2 2 0 0 1 1.85-1.995L10 2z"/></svg>
+                    </button>
                   </div>
                 </div>
                 <div class="row pe-0">
                   <div class="row col-7 d-flex justify-content-between align-items-start">
-                    <div class="col-2 d-flex gap-1">
-                      <button type="button" class="btn btn-secondary tamanio-boton" (click)="restarProducto(producto.id, producto)">-</button>
+                    <div class="col-2 d-flex gap-1 align-items-center">
+                      <button type="button" class="btn btn-secondary tamanio-boton p-1" (click)="restarProducto(producto.id, producto)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/></svg>
+                      </button>
                       <button type="button" class="btn btn-light" style="pointer-events: none;">{{producto.cantidadRequeridaDelProducto}}</button>
-                      <button type="button" class="btn btn-secondary tamanio-boton" (click)="sumarProducto(producto.id)">+</button>
+                      <button type="button" class="btn btn-secondary tamanio-boton p-1" (click)="sumarProducto(producto.id)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7v14"/></svg>
+                      </button>
                     </div>
                     
                   </div>
                   <div class="col-5 d-flex p-0 ms-4 justify-content-end align-items-end">
-                    <h6 class="p-0">€ {{producto.precio * producto.cantidadRequeridaDelProducto}}</h6>
+                    <h6 class="p-0">€ {{dosDecimales(producto.precio, producto.cantidadRequeridaDelProducto)}}</h6>
                   </div>
                 </div>
               </div>

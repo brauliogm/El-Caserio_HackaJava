@@ -1,5 +1,10 @@
-<app-nav-bar></app-nav-bar>
+<div class="pantalla d-flex flex-column justify-content-between">
+    <div>
+        <app-nav-bar></app-nav-bar>
+        <router-outlet></router-outlet>
+    </div>
+    <div>
+        <app-footer></app-footer>
+    </div>
+</div>
 
-<router-outlet></router-outlet>
-
-<app-footer></app-footer>

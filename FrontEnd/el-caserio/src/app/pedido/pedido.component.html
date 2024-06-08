@@ -53,24 +53,30 @@
                                                 <h5 class="parrafo">{{producto.nombre}}</h5>
                                             </div>
                                             <div class="col-3 p-0 d-flex justify-content-end">
-                                                <button type="button" class="btn btn-danger tamanio-boton" (click)="eliminarProducto(producto)">Del</button>
+                                                <button type="button" class="btn btn-danger tamanio-boton" (click)="eliminarProducto(producto)">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M20 6a1 1 0 0 1 .117 1.993L20 8h-.081L19 19a3 3 0 0 1-2.824 2.995L16 22H8c-1.598 0-2.904-1.249-2.992-2.75l-.005-.167L4.08 8H4a1 1 0 0 1-.117-1.993L4 6zm-9.489 5.14a1 1 0 0 0-1.218 1.567L10.585 14l-1.292 1.293l-.083.094a1 1 0 0 0 1.497 1.32L12 15.415l1.293 1.292l.094.083a1 1 0 0 0 1.32-1.497L13.415 14l1.292-1.293l.083-.094a1 1 0 0 0-1.497-1.32L12 12.585l-1.293-1.292l-.094-.083zM14 2a2 2 0 0 1 2 2a1 1 0 0 1-1.993.117L14 4h-4l-.007.117A1 1 0 0 1 8 4a2 2 0 0 1 1.85-1.995L10 2z"/></svg>
+                                                </button>
                                             </div>
                                         </div>
                                         
                                         <div class="row pe-0 col-12">
                                             <div class="row col-6 d-flex align-items-start">
-                                                <div class="col-2 d-flex gap-1">
-                                                    <button type="button" class="btn btn-secondary tamanio-boton" (click)="restarProducto(producto.id, producto)">-</button>
+                                                <div class="col-2 d-flex gap-1 align-items-center">
+                                                    <button type="button" class="btn btn-secondary tamanio-boton p-1" (click)="restarProducto(producto.id, producto)">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/></svg>
+                                                    </button>
                                                     <button type="button" class="btn btn-light" style="pointer-events: none;">{{producto.cantidadRequeridaDelProducto}}</button>
-                                                    <button type="button" class="btn btn-secondary tamanio-boton" (click)="sumarProducto(producto.id)">+</button>
-                                                </div>
+                                                    <button type="button" class="btn btn-secondary tamanio-boton p-1" (click)="sumarProducto(producto.id)">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7v14"/></svg>
+                                                    </button>
+                                                  </div>
                                                 <div class="col-2">
                                                 </div>
                                                 <div class="col-2">
                                                 </div>
                                             </div>
                                             <div class="col-6 d-flex p-0 ms-4 justify-content-end align-items-end">
-                                                <h5 class="p-0">{{producto.precio * producto.cantidadRequeridaDelProducto}}</h5>
+                                                <h5 class="p-0">{{dosDecimales(producto.precio, producto.cantidadRequeridaDelProducto)}}</h5>
                                             </div>
                                         </div>
                                     </div>
