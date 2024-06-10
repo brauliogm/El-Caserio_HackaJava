@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Producto } from '../models/producto';
 import { Carrito } from '../models/carrito';
+import { ClienteService } from './cliente.service';
+import { DireccionClienteService } from './direccion-cliente.service';
+import { DireccionCliente } from '../models/direccionCliente';
+import { Cliente } from '../models/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +16,11 @@ export class CarritoService {
 
   listaProductos: Array<Producto> = [];
 
-  constructor(private clientHttp: HttpClient) { }
+  constructor(
+    private clientHttp: HttpClient,
+    private clienteServise: ClienteService,
+    private direccionClienteServise: DireccionClienteService,
+  ) { }
 
   armadoDelCarrito(productoRecibido: Producto){
     let repetido: boolean = false;
@@ -118,16 +126,40 @@ export class CarritoService {
     return totalElementos;
   }
 
-  armarCarrito(){
+  async armarCarrito(direccion: DireccionCliente, cliente: Cliente) {
     let carrito: Carrito = new Carrito();
-
+  
     carrito.productos = this.listaProductos;
     carrito.totalDelCarrito = this.totalCarrito();
     
+    try {
+      if(direccion != null){}
+      
+      let direccionGuardada = await this.direccionClienteServise.crearDireccionCliente(direccion);
+      console.log("Direccion guardada:");
+      console.log(direccionGuardada);
+      
+      carrito.cliente = cliente;
+      carrito.cliente.direccionCliente = direccionGuardada;
+      
+      let clienteGuardado = await this.clienteServise.crearCliente(carrito.cliente);
+      console.log("Cliente guardado:");
+      console.log(clienteGuardado);
+      
+      carrito.cliente = clienteGuardado;
+  
+      let carritoGuardado = await this.crearCarrito(carrito);
+      console.log("Carrito guardado:");      
+      console.log(carritoGuardado);
+      this.listaProductos.splice(0, this.listaProductos.length) // limpia la lista
+
+    } catch (error) {
+      console.error("Error guardando el carrito:", error);
+    }
   }
 
-  crearCarrito(carrito: Carrito){
-    return this.clientHttp.post<Carrito>(this.urlBase, carrito);
+  crearCarrito(carrito: Carrito): Promise<any>  {
+    return this.clientHttp.post<Carrito>(this.urlBase, carrito).toPromise();
   }
 
   obtenerCarritoPorId(id: number){

@@ -26,10 +26,10 @@ public class ClienteController {
         return iClienteService.buscarCliente(id);
     }
 
-    @PostMapping("/crearCliente")
-    public String crearCliente(@RequestBody Cliente cliente) {
+    @PostMapping()
+    public Cliente crearCliente(@RequestBody Cliente cliente) {
         iClienteService.crearCliente(cliente);
-        return "Cliente creado correctamente.";
+        return cliente;
     }
 
     @DeleteMapping("/{id}")

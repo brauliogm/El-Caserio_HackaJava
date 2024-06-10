@@ -3,6 +3,8 @@ import { Producto } from '../models/producto';
 import { CarritoService } from '../services/carrito.service';
 import { Cliente } from '../models/cliente';
 import { DireccionCliente } from '../models/direccionCliente';
+import { ClienteService } from '../services/cliente.service';
+import { DireccionClienteService } from '../services/direccion-cliente.service';
 
 @Component({
   selector: 'app-pedido',
@@ -19,10 +21,14 @@ export class PedidoComponent {
 
   constructor(
     private carritoServise: CarritoService,
+    private clienteServise: ClienteService,
+    private direccionClienteServise: DireccionClienteService,
   ){}
 
   ngOnInit(){
     this.listaDeProductos = this.carritoServise.listaProductos;
+    this.cliente = this.clienteServise.cliente;
+    this.direccion = this.direccionClienteServise.direccion;
     this.cliente.direccionCliente = this.direccion;
   }
 
@@ -80,6 +86,6 @@ export class PedidoComponent {
   }
 
   confirmarPedido(){
-
+    this.carritoServise.armarCarrito(this.direccion, this.cliente);
   }
 }

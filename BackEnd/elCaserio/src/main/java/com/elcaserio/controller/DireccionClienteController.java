@@ -26,9 +26,9 @@ public class DireccionClienteController {
     }
 
     @PostMapping()
-    public String agregarDireccion(@RequestBody DireccionCliente direccionCliente) {
+    public DireccionCliente agregarDireccion(@RequestBody DireccionCliente direccionCliente) {
         iDireccionClienteService.agregarDireccion(direccionCliente);
-        return "Dirección agregada correctamente";
+        return direccionCliente;
     }
 
     @DeleteMapping("/{id}")

@@ -28,6 +28,10 @@
     width: fit-content;
 }
 
+.enlace{
+    text-decoration: none;
+}
+
 .parrafo{
     white-space-collapse: break-spaces;
     text-wrap: wrap;

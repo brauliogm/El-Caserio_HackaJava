@@ -144,21 +144,6 @@
                                 <label for="inputProvincia" class="form-label">Provincia</label>
                                 <input type="text" [(ngModel)]="direccion.provincia" name="provicia" required required minlength="2" class="form-control" id="inputProvincia">
                             </div>
-                            <!--<div class="col-md-4">
-                            <label for="inputState" class="form-label">State</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                    <label class="form-check-label" for="gridCheck">
-                                    Check me out
-                                    </label>
-                                </div>
-                            </div>-->
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-secondary" *ngIf="!validado">Validar Datos</button>
                                 <button class="btn btn-light py-1 px-4" style="pointer-events: none;" *ngIf="validado">
@@ -203,7 +188,7 @@
                                                 <h5 class="parrafo">{{producto.nombre}}</h5>
                                             </div>
                                             <div class="col-3 ps-0">
-                                                <h5 class="text-end">€ {{producto.precio}}</h5>
+                                                <h5 class="text-end">€ {{dosDecimales(producto.precio, producto.cantidadRequeridaDelProducto)}}</h5>
                                             </div>
                                             <div>
                                                 <hr class="mt-2 mb-1">
@@ -298,8 +283,33 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="ventanaDatos()" data-bs-dismiss="modal">Editar datos</button>
-        <button type="button" class="btn btn-primary" (click)="confirmarPedido()">Confirmar pedido</button>
+        <button type="button" class="btn btn-primary" (click)="confirmarPedido()" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#confirmacion">
+            Confirmar pedido
+        </button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal static -->
+<div class="modal fade" id="confirmacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 24 24"><path fill="#65a30d" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4l8-8z"/></svg>
+                Pedido confirmado
+            </h1>
+        </div>
+        <div class="modal-body">
+            Su pedido llegara a su direccion {{direccion.calle}} en aproximadamente 45min.
+        </div>
+        <div class="modal-body">
+        Si tienes alguna duda, contactanos a nuestro telefono 942 671 855.
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" [routerLink]="['/inicio']" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>

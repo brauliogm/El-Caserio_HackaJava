@@ -24,8 +24,7 @@ export class NavBarComponent {
     this.listaDeProductos = this.carritoServise.listaProductos;
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.rutaActual = event.urlAfterRedirects;
-        console.log('Current URL:', this.rutaActual);
+        this.rutaActual = event.urlAfterRedirects; //para ver en que direccion url estoy actualmente, en este caso para ocultar el carrito y se esta en la direccion del pedido
       }
     });
   }
