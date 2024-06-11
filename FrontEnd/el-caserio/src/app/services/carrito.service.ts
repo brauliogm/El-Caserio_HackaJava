@@ -162,6 +162,10 @@ export class CarritoService {
     return this.clientHttp.post<Carrito>(this.urlBase, carrito).toPromise();
   }
 
+  obtenerCarritos(){
+    return this.clientHttp.get<Carrito[]>(this.urlBase);
+  }
+  
   obtenerCarritoPorId(id: number){
     return this.clientHttp.get<Carrito>(`${this.urlBase}/${id}`);
   }

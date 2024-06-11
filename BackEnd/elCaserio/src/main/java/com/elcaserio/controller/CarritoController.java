@@ -5,6 +5,8 @@ import com.elcaserio.service.ICarritoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("el-caserio/carrito")
 @CrossOrigin(value = "http://localhost:4200")
@@ -12,6 +14,11 @@ public class CarritoController {
 
     @Autowired
     ICarritoService iCarritoService;
+
+    @GetMapping()
+    public List<Carrito> verCarritos() {
+        return iCarritoService.verCarritos();
+    }
 
     @GetMapping("/{id}")
     public Carrito verCarrito(@PathVariable Long id) {

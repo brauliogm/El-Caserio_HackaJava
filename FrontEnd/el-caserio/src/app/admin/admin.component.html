@@ -17,17 +17,17 @@
     </div>
 
     <!-- producto -->
-    <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion" id="accordionPanelsStayOpenExample" *ngFor="let pedido of carritos">
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed col-12" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                     <div class="row col-12 d-flex align-items-center">
-                        <h4 class="col-md-1 m-0">No. pedido</h4>
-                        <h4 class="col-md-3 m-0">Cliente</h4>
-                        <h4 class="col-md-3 m-0">Direccion</h4>
+                        <h4 class="col-md-1 m-0">{{pedido.id}}</h4>
+                        <h4 class="col-md-3 m-0">{{pedido.cliente.nombre}} {{pedido.cliente.apellido}}</h4>
+                        <h4 class="col-md-3 m-0">{{pedido.cliente.direccionCliente.calle}}</h4>
                         <h4 class="col-md-3 m-0">Fecha</h4>
-                        <h4 class="col-md-1 m-0">Num Productos</h4>
-                        <h4 class="col-md-1 m-0">Total</h4>
+                        <h4 class="col-md-1 m-0">{{obtenerCantidadDeProductos()}}</h4>
+                        <h4 class="col-md-1 m-0">{{pedido.totalDelCarrito}}</h4>
                     </div>
                 </button>
             </h2>
