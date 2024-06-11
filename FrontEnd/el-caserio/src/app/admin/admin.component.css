@@ -1,0 +1,14 @@
+/*Barra lateral*/
+.accordion-button{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    width: 100%;
+}
+
+
+
+.list-group-item{
+    border: none;
+    color: white;
+}
+

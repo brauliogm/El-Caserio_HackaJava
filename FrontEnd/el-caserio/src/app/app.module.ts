@@ -13,6 +13,7 @@ import { ProductoDetallesComponent } from './producto-detalles/producto-detalles
 import { PedidoComponent } from './pedido/pedido.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MenuSortPipe } from './menu-sort.pipe';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MenuSortPipe } from './menu-sort.pipe';
     MenuComponent,
     ProductoDetallesComponent,
     PedidoComponent,
-    MenuSortPipe
+    MenuSortPipe,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
