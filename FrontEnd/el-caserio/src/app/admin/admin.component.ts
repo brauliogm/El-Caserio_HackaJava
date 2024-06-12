@@ -24,15 +24,26 @@ export class AdminComponent {
     this.carritoService.obtenerCarritos().subscribe(
       (datos => {
         this.carritos = datos;
+        console.log(datos);
+        
       })
     );
   }
+  
 
   obtenerCantidadDeProductos(): number{
     let total: number = 0;
-    this.carritos.forEach(platillos => 
-      platillos.productos.forEach(plato => 
-        total += plato.cantidadRequeridaDelProducto))
+
+    for (let index = 0; index < this.carritos.length; index++) {
+      const pedido = this.carritos[index];
+      
+      pedido.productos.forEach(plato => 
+        total += plato.cantidadRequeridaDelProducto
+      )
+
+    }
+
+    
 
     return total;
   }

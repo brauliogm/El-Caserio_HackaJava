@@ -79,9 +79,6 @@ export class PedidoComponent {
   }
   
   onSubmit() {
-    console.log('Formulario enviado:');
-    
-    console.log(this.cliente);
     this.validado = true;
   }
 

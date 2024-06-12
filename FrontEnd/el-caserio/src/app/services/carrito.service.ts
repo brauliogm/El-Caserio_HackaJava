@@ -126,10 +126,25 @@ export class CarritoService {
     return totalElementos;
   }
 
+  listaCompleta(): Array<Producto> {
+    let listaProductosFinal: Array<Producto> = [];
+
+    this.listaProductos.forEach(producto => {
+      let i = 0;
+      while (i < producto.cantidadRequeridaDelProducto) {
+        listaProductosFinal.push(producto);
+        i++;
+      }
+    })
+
+    console.log(listaProductosFinal);
+    return listaProductosFinal;
+  }
+
   async armarCarrito(direccion: DireccionCliente, cliente: Cliente) {
     let carrito: Carrito = new Carrito();
   
-    carrito.productos = this.listaProductos;
+    carrito.productos = this.listaCompleta();
     carrito.totalDelCarrito = this.totalCarrito();
     
     try {

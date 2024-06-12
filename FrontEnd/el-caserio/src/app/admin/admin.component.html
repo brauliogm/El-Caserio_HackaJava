@@ -1,6 +1,6 @@
 <div class="container">
     <div class="text-center my-4">
-        <h2>Pedidos realizados</h2>
+        <h2>Pedidos pendientes</h2>
     </div>
 </div>
 
@@ -17,23 +17,28 @@
     </div>
 
     <!-- producto -->
-    <div class="accordion" id="accordionPanelsStayOpenExample" *ngFor="let pedido of carritos">
+    <div class="accordion my-4" id="accordionPanelsStayOpenExample" *ngFor="let pedido of carritos; let i = index">
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed col-12" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                <button class="accordion-button collapsed col-12" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                     <div class="row col-12 d-flex align-items-center">
                         <h4 class="col-md-1 m-0">{{pedido.id}}</h4>
                         <h4 class="col-md-3 m-0">{{pedido.cliente.nombre}} {{pedido.cliente.apellido}}</h4>
                         <h4 class="col-md-3 m-0">{{pedido.cliente.direccionCliente.calle}}</h4>
                         <h4 class="col-md-3 m-0">Fecha</h4>
-                        <h4 class="col-md-1 m-0">{{obtenerCantidadDeProductos()}}</h4>
+                        <h4 class="col-md-1 m-0 ps-4">{{pedido.productos.length}}</h4>
                         <h4 class="col-md-1 m-0">{{pedido.totalDelCarrito}}</h4>
                     </div>
                 </button>
             </h2>
-            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div id="{{ 'collapse' + i }}" class="accordion-collapse collapse">
             <div class="accordion-body">
                 <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <div class="col-6" *ngFor="let plato of pedido.productos">
+                    <h5>{{plato.nombre}}</h5>
+                    <h5>{{plato.categoria}}</h5>
+                    <h5>{{plato.precio}}</h5>
+                </div>
             </div>
             </div>
         </div>

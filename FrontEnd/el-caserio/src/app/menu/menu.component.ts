@@ -46,7 +46,7 @@ export class MenuComponent {
     this.obtenerProductos();
     
   }
-
+  
   private obtenerProductos(){
     this.productoService.obtenerProductosLista().subscribe(
       (datos => {
