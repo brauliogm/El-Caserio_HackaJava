@@ -6,6 +6,7 @@ import { ClienteService } from './cliente.service';
 import { DireccionClienteService } from './direccion-cliente.service';
 import { DireccionCliente } from '../models/direccionCliente';
 import { Cliente } from '../models/cliente';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,10 @@ import { Cliente } from '../models/cliente';
 export class CarritoService {
 
   private urlBase = "http://localhost:8080/el-caserio/carrito";
+  private updateCarritosSource = new Subject<void>();
 
   listaProductos: Array<Producto> = [];
+  updateCarritos$ = this.updateCarritosSource.asObservable();
 
   constructor(
     private clientHttp: HttpClient,
@@ -184,6 +187,10 @@ export class CarritoService {
 
   obtenerCarritos(){
     return this.clientHttp.get<Carrito[]>(this.urlBase);
+  }
+
+  updateCarritos() {
+    this.updateCarritosSource.next();
   }
   
   obtenerCarritoPorId(id: number){

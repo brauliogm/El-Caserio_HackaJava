@@ -10,6 +10,7 @@ import { CarritoService } from '../services/carrito.service';
 export class AdminComponent {
 
   carritos: Carrito[];
+  idActualPedido = 0;
 
   constructor(
     private carritoService: CarritoService,
@@ -17,7 +18,15 @@ export class AdminComponent {
 
   ngOnInit(){
     this.obtenerCarritos();
-    
+    this.carritoService.updateCarritos$.subscribe(() => {
+      // Refresh the list or perform any necessary action
+      this.refreshCarritos();
+    });
+  }
+
+  refreshCarritos() {
+    // Implement logic to refresh the list from the database
+    this.obtenerCarritos();
   }
 
   private obtenerCarritos(){
@@ -29,6 +38,19 @@ export class AdminComponent {
       })
     );
   }
+
+  idPedidoGuardado(id: number){
+    this.idActualPedido = id;
+  }
   
+  eliminarPedidio(id: number){
+    this.carritoService.eliminarCarritoPorId(id).subscribe(
+      (datos => {
+        console.log(datos);
+        this.obtenerCarritos();
+        
+      })
+    );
+  }
   
 }
