@@ -136,16 +136,21 @@ export class CarritoService {
         i++;
       }
     })
-
-    console.log(listaProductosFinal);
     return listaProductosFinal;
   }
 
+  private formatDateTime(date: Date): string {
+    return date.toISOString().slice(0, 19); // yyyy-MM-ddTHH:mm:ss
+  }
+
   async armarCarrito(direccion: DireccionCliente, cliente: Cliente) {
-    let carrito: Carrito = new Carrito();
+    const fechaActual = new Date();
+
+    let carrito: Carrito = new Carrito(fechaActual);
   
     carrito.productos = this.listaCompleta();
     carrito.totalDelCarrito = this.totalCarrito();
+    // carrito.fechaHora = this.formatDateTime(fechaActual);
     
     try {
       if(direccion != null){}

@@ -19,9 +19,9 @@
                 <h5>Subcategoria:</h5>
                 <p>{{producto.subcategoria}}</p>
                 <h5>Alergenos:</h5>
-                <div class="d-flex">
+                <div class="d-flex gap-3">
                     <span class="" *ngFor="let alergeno of producto.listaAlergenos">
-                        {{alergeno.nombre}} , 
+                        {{alergeno.nombre}}
                     </span>
                 </div>
                 <hr class="mt-4 mb-1">

@@ -37,8 +37,8 @@ public class CarritoController {
     }
 
     @DeleteMapping("/{id}")
-    public String vaciarCarrito(@PathVariable Long idCarrito) {
-        iCarritoService.vaciarCarrito(idCarrito);
+    public String vaciarCarritoPorId(@PathVariable Long id) {
+        iCarritoService.vaciarCarrito(id);
         return "Carrito eliminado correctamente.";
     }
 

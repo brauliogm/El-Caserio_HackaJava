@@ -1,6 +1,6 @@
 <div class="container">
     <div class="text-center my-4">
-        <h2>Pedidos pendientes</h2>
+        <h2>Pedidos pendientes <span class="badge text-bg-secondary rounded-pill ms-2">{{carritos.length}}</span></h2>
     </div>
 </div>
 
@@ -11,33 +11,49 @@
         <h4 class="col-1">ID</h4>
         <h4 class="col-3">Cliente</h4>
         <h4 class="col-3">Direccion</h4>
-        <h4 class="col-3">Fecha</h4>
+        <h4 class="col-3">Fecha y hora</h4>
         <h4 class="col-1">Qty</h4>
         <h4 class="col-1">Total</h4>
     </div>
 
     <!-- producto -->
-    <div class="accordion my-4" id="accordionPanelsStayOpenExample" *ngFor="let pedido of carritos; let i = index">
+    <div class="accordion my-4" id="accordionPanelsStayOpenExample" *ngFor="let pedido of carritos; let i = index;">
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed col-12" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                <button class="accordion-button collapsed col-12 flex-wrap" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                     <div class="row col-12 d-flex align-items-center">
-                        <h4 class="col-md-1 m-0">{{pedido.id}}</h4>
+                        <h4 class="col-md-1 m-0">{{i+1}}</h4>
                         <h4 class="col-md-3 m-0">{{pedido.cliente.nombre}} {{pedido.cliente.apellido}}</h4>
                         <h4 class="col-md-3 m-0">{{pedido.cliente.direccionCliente.calle}}</h4>
-                        <h4 class="col-md-3 m-0">Fecha</h4>
+                        <h4 class="col-md-3 m-0">{{pedido.fechaHora}}</h4>
                         <h4 class="col-md-1 m-0 ps-4">{{pedido.productos.length}}</h4>
-                        <h4 class="col-md-1 m-0">{{pedido.totalDelCarrito}}</h4>
+                        <h4 class="col-md-1 m-0 text-center">{{pedido.totalDelCarrito}}</h4>
                     </div>
                 </button>
             </h2>
             <div id="{{ 'collapse' + i }}" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                <div class="col-6" *ngFor="let plato of pedido.productos">
-                    <h5>{{plato.nombre}}</h5>
-                    <h5>{{plato.categoria}}</h5>
-                    <h5>{{plato.precio}}</h5>
+                <div class="pe-4 mb-3 border-bottom row">
+                    <h5 class="col-1"></h5>
+                    <h5 class="col-3">Platillo</h5>
+                    <h5 class="col-3">Categoria</h5>
+                    <h5 class="col-3">Alergenos</h5>
+                    <h5 class="col-1"></h5>
+                    <h5 class="col-1 text-center">Precio</h5>
+                </div>
+                <div class="col-12 d-flex row" *ngFor="let plato of pedido.productos; let i = index">
+                    <h5 class="col-1 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 569 680"><path fill="#ffffff" d="M201 248V14h67v268c0 37-30 68-67 68v296c0 18-15 34-34 34h-67c-18 0-33-16-33-34V350c-37 0-67-31-67-68V14h67v234h33V14h67v234zm168 102V114c0-55 45-100 100-100s100 45 100 100v532c0 18-14 34-32 34h-68c-18 0-34-16-34-34V350z"/></svg>
+                    </h5>
+                    <h5 class="col-3">{{plato.nombre}}</h5>
+                    <h5 class="col-3">{{plato.categoria}}</h5>
+                    <div class="col-4 d-flex gap-3 flex-wrap">
+                        <p *ngFor="let alergeno of plato.listaAlergenos">{{alergeno.nombre}} </p>
+                    </div>
+                    <h5 class="col-1 text-center">{{plato.precio}}</h5>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-danger m-2">Pedido completado</button>
                 </div>
             </div>
             </div>

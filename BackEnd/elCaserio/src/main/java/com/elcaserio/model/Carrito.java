@@ -1,10 +1,12 @@
 package com.elcaserio.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @ToString
@@ -20,6 +22,8 @@ public class Carrito {
     @ManyToOne
     private Cliente cliente;
     private double totalDelCarrito;
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm")
+    private LocalDateTime fechaHora;
 
     public Carrito() {
     }

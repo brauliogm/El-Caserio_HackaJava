@@ -9,7 +9,7 @@ import { CarritoService } from '../services/carrito.service';
 })
 export class AdminComponent {
 
-  carritos: Carrito[] = []
+  carritos: Carrito[];
 
   constructor(
     private carritoService: CarritoService,
@@ -30,23 +30,5 @@ export class AdminComponent {
     );
   }
   
-
-  obtenerCantidadDeProductos(): number{
-    let total: number = 0;
-
-    for (let index = 0; index < this.carritos.length; index++) {
-      const pedido = this.carritos[index];
-      
-      pedido.productos.forEach(plato => 
-        total += plato.cantidadRequeridaDelProducto
-      )
-
-    }
-
-    
-
-    return total;
-  }
-
   
 }
