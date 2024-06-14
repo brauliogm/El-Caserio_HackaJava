@@ -13,11 +13,12 @@ import { DireccionClienteService } from '../services/direccion-cliente.service';
 })
 export class PedidoComponent {
 
-  marcador: number = 3;
+  marcador: number = 1;
   listaDeProductos: Array<Producto> = [];
   cliente: Cliente = new Cliente();
   direccion: DireccionCliente = new DireccionCliente();
   validado: boolean = false;
+  hayError: boolean = false;
 
   constructor(
     private carritoServise: CarritoService,
@@ -83,9 +84,8 @@ export class PedidoComponent {
   }
 
   confirmarPedido(){
-    let error = this.carritoServise.armarCarrito(this.direccion, this.cliente);
-    console.log(error);
-    
+    this.carritoServise.armarPedido(this.direccion, this.cliente);
+    this.hayError = this.carritoServise.hayError;
   }
 
 }

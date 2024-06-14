@@ -18,6 +18,7 @@ export class CarritoService {
 
   listaProductos: Array<Producto> = [];
   updateCarritos$ = this.updateCarritosSource.asObservable();
+  hayError: boolean = false;
 
   constructor(
     private clientHttp: HttpClient,
@@ -143,9 +144,10 @@ export class CarritoService {
   }
 
 
-  async armarCarrito(direccion: DireccionCliente, cliente: Cliente): Promise<string> {
+  async armarPedido(direccion: DireccionCliente, cliente: Cliente) {
     const fechaActual = new Date();
-    let error: string = "";
+    this.hayError = false;
+    
 
     let carrito: Carrito = new Carrito(fechaActual);
   
@@ -155,34 +157,29 @@ export class CarritoService {
     try {
       if (direccion.calle == null && cliente.apellido == null &&
          this.listaCompleta().length == 0 && this.totalCarrito() == 0) {
-        error = "error pai";
+        this.hayError = true;
+        
         console.log("Error: La dirección, el apellido y la lista de productos están vacíos.");
         throw new Error("Algun campo está vacíos.");
       
     }
       
       let direccionGuardada = await this.direccionClienteServise.crearDireccionCliente(direccion);
-      console.log("Direccion guardada:");
-      console.log(direccionGuardada);
       
       carrito.cliente = cliente;
       carrito.cliente.direccionCliente = direccionGuardada;
       
       let clienteGuardado = await this.clienteServise.crearCliente(carrito.cliente);
-      console.log("Cliente guardado:");
-      console.log(clienteGuardado);
       
       carrito.cliente = clienteGuardado;
   
       let carritoGuardado = await this.crearCarrito(carrito);
-      console.log("Carrito guardado:");      
-      console.log(carritoGuardado);
+      console.log("Carrito creado");      
       this.listaProductos.splice(0, this.listaProductos.length) // limpia la lista
 
     } catch (error) {
       console.error("Error guardando el carrito:", error);
     }
-    return error;
   }
 
   crearCarrito(carrito: Carrito): Promise<any>  {
