@@ -13,7 +13,9 @@ public interface ICarritoService {
 
     public Carrito verCarrito(Long idCarrito);
 
-    public void vaciarCarrito(Long idCarrito);
+    public void eliminarCarritoPorId(Long idCarrito);
+
+    public void limpiarCarrito();
 
     public Carrito modificarProductos(Carrito carritoRecibido, Long id);
 

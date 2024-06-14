@@ -45,9 +45,17 @@ public class CarritoController {
         Carrito carrito = this.verCarritoPorId(id);
         if (carrito == null)
             throw new RecursoNoEncontradoExcepcion("No se encontro el id: " + id);
-        iCarritoService.vaciarCarrito(carrito.getId());
+        iCarritoService.eliminarCarritoPorId(carrito.getId());
         Map<String, Boolean> respuesta = new HashMap<>();
         respuesta.put("Carrito eliminado correctamente", Boolean.TRUE);
+        return ResponseEntity.ok(respuesta);
+    }
+
+    @DeleteMapping()
+    public ResponseEntity<Map<String, Boolean>> limpiarCarrito(){
+        iCarritoService.limpiarCarrito();
+        Map<String, Boolean> respuesta = new HashMap<>();
+        respuesta.put("Pedidos eliminados", Boolean.TRUE);
         return ResponseEntity.ok(respuesta);
     }
 

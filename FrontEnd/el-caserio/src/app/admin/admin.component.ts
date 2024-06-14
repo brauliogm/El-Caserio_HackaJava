@@ -48,9 +48,16 @@ export class AdminComponent {
       (datos => {
         console.log(datos);
         this.obtenerCarritos();
-        
       })
     );
   }
   
+  completarPedidos(){
+    this.carritoService.limpiarCarrito().subscribe(
+      (datos => {
+        console.log("Carrito limpio");
+        this.obtenerCarritos();
+      })
+    );
+  }
 }

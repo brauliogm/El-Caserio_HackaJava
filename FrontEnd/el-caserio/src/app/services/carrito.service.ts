@@ -203,8 +203,11 @@ export class CarritoService {
   }
 
   eliminarCarritoPorId(id: number){
-    return this.clientHttp.delete<String>(`${this.urlBase}/${id}`)
+    return this.clientHttp.delete<String>(`${this.urlBase}/${id}`);
   }
 
+  limpiarCarrito(){
+    return this.clientHttp.delete<String>(this.urlBase);
+  }
 
 }

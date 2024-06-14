@@ -1,6 +1,13 @@
-<div class="container">
-    <div class="text-center my-4">
+<div class="container d-flex justify-content-between align-items-center">
+    <div class="col-md-4"></div>
+    <div class="text-center my-4 col-md-4">
         <h2>Pedidos pendientes <span class="badge text-bg-secondary rounded-pill ms-2">{{carritos.length}}</span></h2>
+    </div>
+    <div class="col-md-4 text-end">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#limpiarLista">
+            Limpiar lista
+        </button>
     </div>
 </div>
 
@@ -53,7 +60,7 @@
                     <h5 class="col-1 text-center">€ {{plato.precio}}</h5>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger m-2" (click)="idPedidoGuardado(pedido.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-danger m-2" (click)="idPedidoGuardado(pedido.id)" data-bs-toggle="modal" data-bs-target="#eliminarPorId">
                         Pedido completado
                     </button>
                 </div>
@@ -63,8 +70,8 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal eliminar por id-->
+<div class="modal fade" id="eliminarPorId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -76,6 +83,26 @@
           <button type="button" class="btn btn-primary" (click)="eliminarPedidio(idActualPedido)" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#confirmacion">
               Aceptar
           </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal limpiar lista-->
+<div class="modal fade" id="limpiarLista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+                ¿Se completaron todos los pedidos?
+            </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aún no</button>
+            <button utton type="button" class="btn btn-primary" (click)="completarPedidos()" data-bs-dismiss="modal">
+                Si, limpiar lista
+            </button>
         </div>
       </div>
     </div>

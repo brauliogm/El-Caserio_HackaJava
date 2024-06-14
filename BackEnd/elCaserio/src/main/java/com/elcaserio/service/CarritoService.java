@@ -32,8 +32,13 @@ public class CarritoService implements ICarritoService {
 
     //MÉTODO PARA BORRAR UN CARRITO
     @Override
-    public void vaciarCarrito(Long idCarrito) {
+    public void eliminarCarritoPorId(Long idCarrito) {
         iCarritoRepo.deleteById(idCarrito);
+    }
+
+    @Override
+    public void limpiarCarrito(){
+        iCarritoRepo.deleteAll();
     }
 
     //METODO PARA MODIFICAR LOS PRODUCTOS DEL CARRITO
