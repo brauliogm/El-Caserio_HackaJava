@@ -142,21 +142,24 @@ export class CarritoService {
     return listaProductosFinal;
   }
 
-  private formatDateTime(date: Date): string {
-    return date.toISOString().slice(0, 19); // yyyy-MM-ddTHH:mm:ss
-  }
 
-  async armarCarrito(direccion: DireccionCliente, cliente: Cliente) {
+  async armarCarrito(direccion: DireccionCliente, cliente: Cliente): Promise<string> {
     const fechaActual = new Date();
+    let error: string = "";
 
     let carrito: Carrito = new Carrito(fechaActual);
   
     carrito.productos = this.listaCompleta();
     carrito.totalDelCarrito = this.totalCarrito();
-    // carrito.fechaHora = this.formatDateTime(fechaActual);
     
     try {
-      if(direccion != null){}
+      if (direccion.calle == null && cliente.apellido == null &&
+         this.listaCompleta().length == 0 && this.totalCarrito() == 0) {
+        error = "error pai";
+        console.log("Error: La dirección, el apellido y la lista de productos están vacíos.");
+        throw new Error("Algun campo está vacíos.");
+      
+    }
       
       let direccionGuardada = await this.direccionClienteServise.crearDireccionCliente(direccion);
       console.log("Direccion guardada:");
@@ -179,6 +182,7 @@ export class CarritoService {
     } catch (error) {
       console.error("Error guardando el carrito:", error);
     }
+    return error;
   }
 
   crearCarrito(carrito: Carrito): Promise<any>  {

@@ -13,7 +13,7 @@ import { DireccionClienteService } from '../services/direccion-cliente.service';
 })
 export class PedidoComponent {
 
-  marcador: number = 1;
+  marcador: number = 3;
   listaDeProductos: Array<Producto> = [];
   cliente: Cliente = new Cliente();
   direccion: DireccionCliente = new DireccionCliente();
@@ -83,6 +83,9 @@ export class PedidoComponent {
   }
 
   confirmarPedido(){
-    this.carritoServise.armarCarrito(this.direccion, this.cliente);
+    let error = this.carritoServise.armarCarrito(this.direccion, this.cliente);
+    console.log(error);
+    
   }
+
 }

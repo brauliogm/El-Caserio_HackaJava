@@ -28,6 +28,18 @@
     width: fit-content;
 }
 
+img {
+    max-width: 211px; /* Ancho fijo */
+    max-height: 211px; /* Alto fijo */
+    object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+}
+
+.resumen{
+    max-width: 112px; /* Ancho fijo */
+    max-height: 112px; /* Alto fijo */
+    object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+}
+
 .enlace{
     text-decoration: none;
 }

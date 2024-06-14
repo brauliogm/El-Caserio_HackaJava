@@ -7,6 +7,12 @@
     display: inline;
 }
 
+img {
+    max-width: 500px; /* Ancho fijo */
+    max-height: 500px; /* Alto fijo */
+    object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+}
+
 .tamanio-boton{
     height: fit-content;
     width: fit-content;

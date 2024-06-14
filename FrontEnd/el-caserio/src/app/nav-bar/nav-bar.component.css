@@ -23,7 +23,7 @@
 
 .carrito{
     width: 400px;
-    max-height: 80vh;
+    max-height: 85vh;
     position: absolute;
     margin-top: 18px;
     margin-left: -350px;
@@ -32,6 +32,12 @@
     list-style: none;
     border-radius: 5px;
     z-index: 6;
+}
+
+img {
+    max-width: 98px; /* Ancho fijo */
+    max-height: 98px; /* Alto fijo */
+    object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
 }
 
 .car-button{

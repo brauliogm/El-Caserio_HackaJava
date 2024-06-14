@@ -22,6 +22,12 @@
 }
 
 /*Productos*/
+img {
+    width: 300px; /* Ancho fijo */
+    height: 300px; /* Alto fijo */
+    object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+}
+
 .tamanio-boton{
     height: fit-content;
     width: fit-content;
