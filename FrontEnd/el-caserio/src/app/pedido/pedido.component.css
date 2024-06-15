@@ -44,6 +44,11 @@ img {
     text-decoration: none;
 }
 
+.enlace2{
+    text-decoration: none;
+    color: #dee2e6;
+}
+
 .parrafo{
     white-space-collapse: break-spaces;
     text-wrap: wrap;

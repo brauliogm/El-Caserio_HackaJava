@@ -33,8 +33,6 @@ export class AdminComponent {
     this.carritoService.obtenerCarritos().subscribe(
       (datos => {
         this.carritos = datos;
-        console.log(datos);
-        
       })
     );
   }

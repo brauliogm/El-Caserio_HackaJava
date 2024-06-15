@@ -42,47 +42,49 @@
             <h5>Agregue productos en el <a class="enlace" routerLink="/menu" routerLinkActive="active">menu</a></h5>
           </div>
           
-          <!-- producto -->
-          <li class="px-3 py-1" *ngFor="let producto of listaDeProductos">
-            <div class="row col-12">
-              <div class="col-4">
-                <img src="../../assets/{{producto.categoria}}.webp" class="d-block w-100" alt="...">
-              </div>
-              <div class="col-8 px-0">
-                <div class="row mb-3">
-                  <div class="col-9">
-                    <p class="parrafo">{{producto.nombre}}</p>
-                  </div>
-                  <div class="col-3 p-0 d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger tamanio-boton" (click)="eliminarProducto(producto)">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M20 6a1 1 0 0 1 .117 1.993L20 8h-.081L19 19a3 3 0 0 1-2.824 2.995L16 22H8c-1.598 0-2.904-1.249-2.992-2.75l-.005-.167L4.08 8H4a1 1 0 0 1-.117-1.993L4 6zm-9.489 5.14a1 1 0 0 0-1.218 1.567L10.585 14l-1.292 1.293l-.083.094a1 1 0 0 0 1.497 1.32L12 15.415l1.293 1.292l.094.083a1 1 0 0 0 1.32-1.497L13.415 14l1.292-1.293l.083-.094a1 1 0 0 0-1.497-1.32L12 12.585l-1.293-1.292l-.094-.083zM14 2a2 2 0 0 1 2 2a1 1 0 0 1-1.993.117L14 4h-4l-.007.117A1 1 0 0 1 8 4a2 2 0 0 1 1.85-1.995L10 2z"/></svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="row pe-0">
-                  <div class="row col-7 d-flex justify-content-between align-items-start">
-                    <div class="col-2 d-flex gap-1 align-items-center">
-                      <button type="button" class="btn btn-secondary tamanio-boton p-1" (click)="restarProducto(producto.id, producto)">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/></svg>
-                      </button>
-                      <button type="button" class="btn btn-light" style="pointer-events: none;">{{producto.cantidadRequeridaDelProducto}}</button>
-                      <button type="button" class="btn btn-secondary tamanio-boton p-1" (click)="sumarProducto(producto.id)">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7v14"/></svg>
+          <div class="barraLateral">
+            <!-- producto -->
+            <li class="px-3 py-1" *ngFor="let producto of listaDeProductos">
+              <div class="row col-12 mb-2">
+                <a class="col-4 d-flex align-items-center" [routerLink]="['/producto-detalles', producto.id]">
+                  <img src="../../assets/{{producto.categoria}}.webp" class="d-block w-100" alt="...">
+                </a>
+                <div class="col-8 px-0">
+                  <div class="row mb-3">
+                    <div class="col-9">
+                      <p class="parrafo">{{producto.nombre}}</p>
+                    </div>
+                    <div class="col-3 p-0 d-flex justify-content-end">
+                      <button type="button" class="btn btn-danger tamanio-boton" (click)="eliminarProducto(producto)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M20 6a1 1 0 0 1 .117 1.993L20 8h-.081L19 19a3 3 0 0 1-2.824 2.995L16 22H8c-1.598 0-2.904-1.249-2.992-2.75l-.005-.167L4.08 8H4a1 1 0 0 1-.117-1.993L4 6zm-9.489 5.14a1 1 0 0 0-1.218 1.567L10.585 14l-1.292 1.293l-.083.094a1 1 0 0 0 1.497 1.32L12 15.415l1.293 1.292l.094.083a1 1 0 0 0 1.32-1.497L13.415 14l1.292-1.293l.083-.094a1 1 0 0 0-1.497-1.32L12 12.585l-1.293-1.292l-.094-.083zM14 2a2 2 0 0 1 2 2a1 1 0 0 1-1.993.117L14 4h-4l-.007.117A1 1 0 0 1 8 4a2 2 0 0 1 1.85-1.995L10 2z"/></svg>
                       </button>
                     </div>
-                    
                   </div>
-                  <div class="col-5 d-flex p-0 ms-4 justify-content-end align-items-end">
-                    <h6 class="p-0">€ {{dosDecimales(producto.precio, producto.cantidadRequeridaDelProducto)}}</h6>
+                  <div class="row pe-0">
+                    <div class="row col-7 d-flex justify-content-between align-items-start">
+                      <div class="col-2 d-flex gap-1 align-items-center">
+                        <button type="button" class="btn btn-secondary tamanio-boton p-1" (click)="restarProducto(producto.id, producto)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/></svg>
+                        </button>
+                        <button type="button" class="btn btn-light" style="pointer-events: none;">{{producto.cantidadRequeridaDelProducto}}</button>
+                        <button type="button" class="btn btn-secondary tamanio-boton p-1" (click)="sumarProducto(producto.id)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7v14"/></svg>
+                        </button>
+                      </div>
+                      
+                    </div>
+                    <div class="col-5 d-flex p-0 ms-4 justify-content-end align-items-end">
+                      <h6 class="p-0">€ {{dosDecimales(producto.precio, producto.cantidadRequeridaDelProducto)}}</h6>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div><hr class="mt-3 mb-1"></div>
-          </li>          
+              <div><hr class="m-0"></div>
+            </li>          
+
+          </div>
           
-          <!--<li><hr class="dropdown-divider"></li> -->
-          <li class="px-3 py-1 mb-1" *ngIf="listaDeProductos.length != 0">
+          <div class="px-3 py-1 pt-3 mb-1 contraste" *ngIf="listaDeProductos.length != 0">
             <div class="row col-md-12 p-0">
               <div class="col-md-7">
                 <h5>Subtotal del carrito :</h5>
@@ -91,9 +93,11 @@
                 <h5 class="total">€ {{totalCarrito()}}</h5>
               </div>
             </div>
-          </li>
+            <button class="btn btn-secondary mt-1 mb-2 w-100" routerLink="/pedido">Ver y editar carrito</button>
+          </div>
         </ul>
       </div>
     </div>
   </div>
 </nav>
+<div class="fondo">

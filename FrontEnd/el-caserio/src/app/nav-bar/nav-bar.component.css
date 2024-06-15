@@ -34,6 +34,19 @@
     z-index: 6;
 }
 
+.barraLateral{
+    max-height: 70vh;
+    overflow-y: auto; /* Añade una barra de desplazamiento lateral cuando el contenido excede la altura */
+}
+
+li:last-child hr{
+    display: none;
+}
+
+.contraste{
+    border-top: #6c757d solid 1px;
+}
+
 img {
     max-width: 98px; /* Ancho fijo */
     max-height: 98px; /* Alto fijo */

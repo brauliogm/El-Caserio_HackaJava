@@ -154,16 +154,28 @@ export class CarritoService {
     carrito.productos = this.listaCompleta();
     carrito.totalDelCarrito = this.totalCarrito();
     
-    try {
-      if (direccion.calle == null && cliente.apellido == null &&
-         this.listaCompleta().length == 0 && this.totalCarrito() == 0) {
-        this.hayError = true;
-        
-        console.log("Error: La dirección, el apellido y la lista de productos están vacíos.");
-        throw new Error("Algun campo está vacíos.");
-      
+    if (!direccion || !cliente) {
+      this.hayError = true;
+      console.log("Error: La dirección o el cliente están vacíos.");
+      throw new Error("La dirección o el cliente no pueden estar vacíos.");
     }
-      
+    
+    const validacionDireccion = !direccion.calle || direccion.codigoPostal <= 0 || !direccion.localidad || !direccion.provincia;
+    const validacionCliente = !cliente.nombre || !cliente.apellido || !cliente.telefono || !cliente.email || !cliente.direccionCliente;
+  
+    if (validacionDireccion || validacionCliente) {
+        this.hayError = true;
+        console.log("Error: Alguno de los campos obligatorios de dirección o cliente están vacíos.");
+        throw new Error("Alguno de los campos obligatorios de dirección o cliente están vacíos.");
+    }
+  
+    if (carrito.productos.length === 0 || carrito.totalDelCarrito <= 0) {
+        this.hayError = true;
+        console.log("Error: La lista de productos está vacía o el total del carrito es cero.");
+        throw new Error("La lista de productos está vacía o el total del carrito es cero.");
+    }
+
+    try {      
       let direccionGuardada = await this.direccionClienteServise.crearDireccionCliente(direccion);
       
       carrito.cliente = cliente;
