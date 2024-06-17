@@ -15,10 +15,12 @@ Decidimos enfocar el proyecto en un negocio real para resolver problemas y neces
 
 Node.js
   Versión utilizada: v18.20.2 LTS
+  
   https://nodejs.org/en/download/prebuilt-installer
 
 Angular
   Versión utilizada CLI: 16.2.12
+  
   Para revisar la versión actual (en PowerShell):
     
     ng version 
@@ -34,6 +36,7 @@ Angular
     npm install -g @angular/cli@16.2.12
 
   Biblioteca para la paginación del menú dentro de la aplicación
+  
   Instalar la biblioteca:
 
   ```bash
@@ -41,6 +44,7 @@ Angular
   ```
 
 JDK Java 22
+
   https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html
 
 
