@@ -65,7 +65,7 @@ Abrir la carpeta de 'elCaserio' en tu IDE con la direccion
   \HackaJava\BackEnd\elCaserio
 ```
 
-Seleccionar el JDK 22
+**Seleccionar el JDK 22
 
 Despues de que se instalen las dependencias, modificar el archivo de "application.properties" que esta en la carpeta "\HackaJava\BackEnd\elCaserio\src\main\resources" y colocar el usuario y contraseña de tu base de datos local.
 
@@ -77,3 +77,53 @@ spring.datasource.password=
 ```
   
 Ejecutar la clase de "ElCaserioApplication", esto devería de iniciar el servidor de Tomcat en local.
+
+### Agregar elementos a la Base de Datos
+
+(Mientras la aplicacion del BackEnd este corriendo)
+
+Utilizando Postmat, podemos agregar los alergenos y los productos con los siguientes JSON, con las siguientes direcciones:
+
+- Para los alergenos:
+
+Metodo (POST)
+
+http://localhost:8080/el-caserio/alergeno 
+
+```bash
+{
+  "nombre": "Nueces"
+}
+
+```
+
+- Para los productos
+
+Metodo (POST)
+
+http://localhost:8080/el-caserio/producto
+
+```bash
+{
+  "nombre": "La Yankee Burger",
+  "categoria": "Hamburguesa",
+  "subcategoria": "Especial",
+  "descripcion": "Doble carne smash con queso cheddar y un toque de la salsa especial de la casa.",
+  "listaAlergenos": [
+                      {
+                          "id": 1
+                      },
+                      {
+                          "id": 2
+                      }
+                  ],
+  "precio": 12.99
+}
+
+```
+
+- Las categorias disponibles son las siguientes:
+
+Hamburguesa, Entrantes, Combinados Especiales, Ensaladas, Sandwiches, Bocadillos, Perritos, Postres
+
+(Agregar los alergenos antes de los productos, y ultilizar los id que estos generen)
