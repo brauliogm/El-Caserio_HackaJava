@@ -1,6 +1,6 @@
 // JSON POSTMAN:
 
-http://localhost:8080/crearProducto (POST)
+http://localhost:8080/el-caserio/producto (POST)
 
 {
     "nombre": "La Yankee Burger",
@@ -18,7 +18,7 @@ http://localhost:8080/crearProducto (POST)
     "precio": 12.99
 }
 
-http://localhost:8080/crearAlergeno (POST)
+http://localhost:8080/el-caserio/alergeno (POST)
 
 {
     "nombre": "Nueces"
