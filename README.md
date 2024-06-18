@@ -139,3 +139,26 @@ http://localhost:8080/el-caserio/producto
 Hamburguesa, Entrantes, Combinados Especiales, Ensaladas, Sándwiches, Bocadillos, Perritos, Postres.
 
 (Agregar los alérgenos antes de los productos, y utilizar los id que estos generen).
+
+## Capturas del proyecto
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/a5813167-7e74-4dd9-9c0f-64a5265622d7)
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/a473ac83-4717-4053-bef2-6ebabfac23a6)
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/135ca1ba-27f7-4b5c-9ce3-569c0c8cd2e9)
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/ed324328-28ac-4e1b-9a8e-db9a7aebb458)
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/66aa23ed-cfa2-4989-af61-858a066bd43d)
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/b16e4fc4-cbab-4666-b5ea-b74ca5d00e91)
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/febf9e3e-fad6-42fc-800a-4c609fcbefd7)
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/fdca016f-1d6a-487e-bf12-638be419afbd)
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/cc49f872-b832-44cd-812e-5a26fccd6004)
+
+
+
