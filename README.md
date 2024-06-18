@@ -58,6 +58,7 @@ Decidimos enfocar el proyecto en un negocio real para resolver problemas y neces
 
   https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html
 
+- Spring Boot 3.2.5
 
 ## Iniciar el FrontEnd ##
 
