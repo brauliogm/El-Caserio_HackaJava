@@ -29,13 +29,14 @@ Decidimos enfocar el proyecto en un negocio real para resolver problemas y neces
   ng version 
   ```
 
-  (Si no cuentas con Angular, utiliza el siguiente comando de instalación en la lista)
-
+  
   Para desinstalar la versión actual si no es la 16.2.12 (en PowerShell):
 
   ```bash
   npm uninstall -g @angular/cli 
   ```
+
+  - (Si no cuentas con Angular, utiliza el siguiente comando de instalación en la lista)
     
   Para instalar una versión específica (en PowerShell):
 
@@ -53,7 +54,7 @@ Decidimos enfocar el proyecto en un negocio real para resolver problemas y neces
   npm install ngx-pagination
   ```
 
-JDK Java 22
+- JDK Java 22
 
   https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html
 
