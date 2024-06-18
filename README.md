@@ -13,12 +13,14 @@ Decidimos enfocar el proyecto en un negocio real para resolver problemas y neces
 
 ## Versiones de las tecnologías utilizadas ##
 
-Node.js
+- Node.js
+  
   Versión utilizada: v18.20.2 LTS
   
   https://nodejs.org/en/download/prebuilt-installer
 
-Angular
+- Angular
+  
   Versión utilizada CLI: 16.2.12
   
   Para revisar la versión actual (en PowerShell):
@@ -35,9 +37,9 @@ Angular
     
     npm install -g @angular/cli@16.2.12
 
-  Bootstrap 5.3
+  - Bootstrap 5.3
 
-  Biblioteca para la paginación del menú dentro de la aplicación
+  - Biblioteca para la paginación del menú dentro de la aplicación
   
   Instalar la biblioteca:
 
