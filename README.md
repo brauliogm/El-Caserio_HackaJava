@@ -24,22 +24,28 @@ Decidimos enfocar el proyecto en un negocio real para resolver problemas y neces
   Versión utilizada CLI: 16.2.12
   
   Para revisar la versión actual (en PowerShell):
-    
-    ng version 
+
+  ```bash
+  ng version 
+  ```
 
   (Si no cuentas con Angular, utiliza el siguiente comando de instalación en la lista)
 
   Para desinstalar la versión actual si no es la 16.2.12 (en PowerShell):
 
-    npm uninstall -g @angular/cli 
-
-  Para instalar una versión específica (en PowerShell):
+  ```bash
+  npm uninstall -g @angular/cli 
+  ```
     
-    npm install -g @angular/cli@16.2.12
+  Para instalar una versión específica (en PowerShell):
 
-  - Bootstrap 5.3
+    ```bash
+  npm install -g @angular/cli@16.2.12
+  ```
+    
+- Bootstrap 5.3
 
-  - Biblioteca para la paginación del menú dentro de la aplicación
+- Biblioteca para la paginación del menú dentro de la aplicación
   
   Instalar la biblioteca:
 
