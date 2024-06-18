@@ -35,6 +35,8 @@ Angular
     
     npm install -g @angular/cli@16.2.12
 
+  Bootstrap 5.3
+
   Biblioteca para la paginación del menú dentro de la aplicación
   
   Instalar la biblioteca:
