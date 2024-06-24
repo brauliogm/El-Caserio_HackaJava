@@ -46,14 +46,6 @@ Decidimos enfocar el proyecto en un negocio real para resolver problemas y neces
     
 - Bootstrap 5.3
 
-- Biblioteca para la paginación del menú dentro de la aplicación
-  
-  Instalar la biblioteca:
-
-  ```bash
-  npm install ngx-pagination
-  ```
-
 - JDK Java 22
 
   https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html
@@ -69,6 +61,14 @@ Después de clonar el repositorio, ejecutar el comando:
   npm install
 ```
 Esto debe hacerse en la carpeta "el-caserio" dentro de la carpeta "FrontEnd".
+
+- Biblioteca para la paginación del menú dentro de la aplicación
+  
+  Instalar la biblioteca tambien dentro de la carpeta de "\el-caserio":
+
+  ```bash
+  npm install ngx-pagination
+  ```
 
 Para ejecutar el FrontEnd usamos el comando:
 
