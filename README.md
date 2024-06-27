@@ -13,40 +13,44 @@ Decidimos enfocar el proyecto en un negocio real para resolver problemas y neces
 
 ## Versiones de las tecnologías utilizadas ##
 
-Node.js
+- Node.js
+  
   Versión utilizada: v18.20.2 LTS
   
   https://nodejs.org/en/download/prebuilt-installer
 
-Angular
+- Angular
+  
   Versión utilizada CLI: 16.2.12
   
   Para revisar la versión actual (en PowerShell):
-    
-    ng version 
-
-  (Si no cuentas con Angular, utiliza el siguiente comando de instalación en la lista)
-
-  Para desinstalar la versión actual si no es la 16.2.12 (en PowerShell):
-
-    npm uninstall -g @angular/cli 
-
-  Para instalar una versión específica (en PowerShell):
-    
-    npm install -g @angular/cli@16.2.12
-
-  Biblioteca para la paginación del menú dentro de la aplicación
-  
-  Instalar la biblioteca:
 
   ```bash
-  npm install ngx-pagination
+  ng version 
   ```
 
-JDK Java 22
+  
+  Para desinstalar la versión actual si no es la 16.2.12 (en PowerShell):
+
+  ```bash
+  npm uninstall -g @angular/cli 
+  ```
+
+  - (Si no cuentas con Angular, utiliza el siguiente comando de instalación en la lista)
+    
+  Para instalar una versión específica (en PowerShell):
+
+    ```bash
+  npm install -g @angular/cli@16.2.12
+  ```
+    
+- Bootstrap 5.3
+
+- JDK Java 22
 
   https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html
 
+- Spring Boot 3.2.5
 
 ## Iniciar el FrontEnd ##
 
@@ -57,6 +61,14 @@ Después de clonar el repositorio, ejecutar el comando:
   npm install
 ```
 Esto debe hacerse en la carpeta "el-caserio" dentro de la carpeta "FrontEnd".
+
+- Biblioteca para la paginación del menú dentro de la aplicación
+  
+  Instalar la biblioteca tambien dentro de la carpeta de "\el-caserio":
+
+  ```bash
+  npm install ngx-pagination
+  ```
 
 Para ejecutar el FrontEnd usamos el comando:
 
@@ -139,3 +151,44 @@ http://localhost:8080/el-caserio/producto
 Hamburguesa, Entrantes, Combinados Especiales, Ensaladas, Sándwiches, Bocadillos, Perritos, Postres.
 
 (Agregar los alérgenos antes de los productos, y utilizar los id que estos generen).
+
+## Capturas del proyecto
+
+- Ventana de Inicio
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/a5813167-7e74-4dd9-9c0f-64a5265622d7)
+
+- Ventana del Menú
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/a473ac83-4717-4053-bef2-6ebabfac23a6)
+
+- El carrito con algunos productos
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/135ca1ba-27f7-4b5c-9ce3-569c0c8cd2e9)
+
+- Ventana del Pedido
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/ed324328-28ac-4e1b-9a8e-db9a7aebb458)
+
+- Ventana del formulario
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/66aa23ed-cfa2-4989-af61-858a066bd43d)
+
+- Ventana con el resumen del pedido
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/b16e4fc4-cbab-4666-b5ea-b74ca5d00e91)
+
+- Alerta de confirmación del pedido
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/febf9e3e-fad6-42fc-800a-4c609fcbefd7)
+
+- Panel de administración de los pedidos
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/fdca016f-1d6a-487e-bf12-638be419afbd)
+
+- Detalles del pedido
+
+![image](https://github.com/brauliogm/HackaJava/assets/101690227/cc49f872-b832-44cd-812e-5a26fccd6004)
+
+
+
